@@ -14,11 +14,11 @@ extendPrototype(String, function camelcasify () {
 	return temp[0].decapitalise() + temp.slice(1).map((element) => element.capitalise()).join("");
 });
 
-extendPrototype(String, function first () {
+extendPrototype(String, function first (length = 1) {
 	return this.slice(0, length);
 });
 
-extendPrototype(String, function last () {
+extendPrototype(String, function last (length = 1) {
 	return this.slice(-length);
 });
 

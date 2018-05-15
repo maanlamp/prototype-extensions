@@ -31,10 +31,14 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 });
 
 (0, _Extend2.default)(String, function first() {
+	var length = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+
 	return this.slice(0, length);
 });
 
 (0, _Extend2.default)(String, function last() {
+	var length = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+
 	return this.slice(-length);
 });
 
