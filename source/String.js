@@ -106,6 +106,8 @@ alias(String, "toLowerCase",  "toLower");
 alias(String, "toLowerCase",  "lower");
 alias(String, "toUpperCase",  "toUpper");
 alias(String, "toUpperCase",  "upper");
+alias(String, "first",        "firstChar");
+alias(String, "last",         "lastChar");
 console.groupEnd();
 
 //titlecasify -> Title Case is Geweldig!
