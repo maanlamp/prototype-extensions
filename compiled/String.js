@@ -139,6 +139,8 @@ console.groupCollapsed("Aliasing...");
 (0, _Alias2.default)(String, "toLowerCase", "lower");
 (0, _Alias2.default)(String, "toUpperCase", "toUpper");
 (0, _Alias2.default)(String, "toUpperCase", "upper");
+(0, _Alias2.default)(String, "first", "firstChar");
+(0, _Alias2.default)(String, "last", "lastChar");
 console.groupEnd();
 
 //titlecasify -> Title Case is Geweldig!
