@@ -1,0 +1,23 @@
+{
+  "name": "prototype-extensions",
+  "version": "1.0.0",
+  "description": "My personal prototype extension library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maanlamp/prototype-extensions.git"
+  },
+  "author": "maanlamp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maanlamp/prototype-extensions/issues"
+  },
+  "homepage": "https://github.com/maanlamp/prototype-extensions#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
