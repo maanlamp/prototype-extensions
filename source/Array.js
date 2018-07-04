@@ -59,6 +59,11 @@ extendPrototype(Array, function clear () {
 	return this;
 });
 
+extendPrototype(Array, function grab (start, end) {
+	const grabbed = this.splice(start, end - start);
+	return (grabbed.length === 1) ? grabbed[0] : grabbed;
+});
+
 import alias from "./Alias.js";
 console.groupCollapsed("Aliasing...");
 alias(Array, "average", "avg");
