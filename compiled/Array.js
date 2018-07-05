@@ -79,7 +79,9 @@ function toNumber(value) {
 	return this;
 });
 
-(0, _Extend2.default)(Array, function grab(start, end) {
+(0, _Extend2.default)(Array, function grab(start) {
+	var end = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : start + 1;
+
 	var grabbed = this.splice(start, end - start);
 	return grabbed.length === 1 ? grabbed[0] : grabbed;
 });

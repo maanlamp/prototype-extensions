@@ -59,7 +59,7 @@ extendPrototype(Array, function clear () {
 	return this;
 });
 
-extendPrototype(Array, function grab (start, end) {
+extendPrototype(Array, function grab (start, end = start + 1) {
 	const grabbed = this.splice(start, end - start);
 	return (grabbed.length === 1) ? grabbed[0] : grabbed;
 });
