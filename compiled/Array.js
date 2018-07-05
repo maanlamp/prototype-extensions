@@ -79,6 +79,11 @@ function toNumber(value) {
 	return this;
 });
 
+(0, _Extend2.default)(Array, function grab(start, end) {
+	var grabbed = this.splice(start, end - start);
+	return grabbed.length === 1 ? grabbed[0] : grabbed;
+});
+
 console.groupCollapsed("Aliasing...");
 (0, _Alias2.default)(Array, "average", "avg");
 (0, _Alias2.default)(Array, "reject", "without");
