@@ -26,11 +26,9 @@ extendPrototype(String, function pad (length = 1, padString = " ") {
 	switch (typeof length) {
 		case "number":
 			return this.padLeft(length, padString).padRight(length, padString.reverse());
-		break;
 		case "string":
 			padString = length;
 			return padString + this + padString.reverse();
-		break;
 		default: throw new Error(`Cannot pad with ${length}`);
 	}
 });
@@ -38,12 +36,10 @@ extendPrototype(String, function pad (length = 1, padString = " ") {
 extendPrototype(String, function padLeft (length = 1, padString = " ") {
 	switch (typeof length) {
 		case "number":
-		return padString.repeat(length) + this;
-		break;
+			return padString.repeat(length) + this;
 		case "string":
 			padString = length;
 			return padString + this;
-		break;
 		default: throw new Error(`Cannot pad with ${length}`);
 	}
 });
@@ -51,12 +47,10 @@ extendPrototype(String, function padLeft (length = 1, padString = " ") {
 extendPrototype(String, function padRight (length = 1, padString = " ") {
 	switch (typeof length) {
 		case "number":
-		return this + padString.repeat(length);
-		break;
+			return this + padString.repeat(length);
 		case "string":
 			padString = length;
 			return this + padString;
-		break;
 		default: throw new Error(`Cannot pad with ${length}`);
 	}
 });
