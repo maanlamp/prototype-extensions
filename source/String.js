@@ -91,6 +91,10 @@ extendPrototype(String, function hyphenate () {
 	return this.words(false).join("-");
 });
 
+extendPrototype(String, function inflect (count) { //Declension? Get grammatical number? idk what the best naming is.
+	return (count !== 1) ? `${this}s` : this;
+});
+
 import alias from "./Alias.js";
 console.groupCollapsed("Aliasing...");
 alias(String, "capitalise",   "capitalize");
