@@ -134,16 +134,16 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 	return count !== 1 ? this + "s" : this;
 });
 
-console.groupCollapsed("Aliasing...");
-(0, _Alias2.default)(String, "capitalise", "capitalize");
-(0, _Alias2.default)(String, "decapitalise", "decapitalize");
-(0, _Alias2.default)(String, "camelcasify", "camelCasify");
-(0, _Alias2.default)(String, "toLowerCase", "toLower");
-(0, _Alias2.default)(String, "toLowerCase", "lower");
-(0, _Alias2.default)(String, "toUpperCase", "toUpper");
-(0, _Alias2.default)(String, "toUpperCase", "upper");
-(0, _Alias2.default)(String, "first", "firstChar");
-(0, _Alias2.default)(String, "last", "lastChar");
+console.groupCollapsed("Aliasing String methods...");
+(0, _Alias2.default)(String, "capitalise", "capitalize", false);
+(0, _Alias2.default)(String, "decapitalise", "decapitalize", false);
+(0, _Alias2.default)(String, "camelcasify", "camelCasify", false);
+(0, _Alias2.default)(String, "toLowerCase", "toLower", false);
+(0, _Alias2.default)(String, "toLowerCase", "lower", false);
+(0, _Alias2.default)(String, "toUpperCase", "toUpper", false);
+(0, _Alias2.default)(String, "toUpperCase", "upper", false);
+(0, _Alias2.default)(String, "first", "firstChar", false);
+(0, _Alias2.default)(String, "last", "lastChar", false);
 console.groupEnd();
 
 //titlecasify -> Title Case is Geweldig!

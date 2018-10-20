@@ -96,16 +96,16 @@ extendPrototype(String, function inflect (count) { //Declension? Get grammatical
 });
 
 import alias from "./Alias.js";
-console.groupCollapsed("Aliasing...");
-alias(String, "capitalise",   "capitalize");
-alias(String, "decapitalise", "decapitalize");
-alias(String, "camelcasify",  "camelCasify");
-alias(String, "toLowerCase",  "toLower");
-alias(String, "toLowerCase",  "lower");
-alias(String, "toUpperCase",  "toUpper");
-alias(String, "toUpperCase",  "upper");
-alias(String, "first",        "firstChar");
-alias(String, "last",         "lastChar");
+console.groupCollapsed("Aliasing String methods...");
+alias(String, "capitalise",   "capitalize",   false);
+alias(String, "decapitalise", "decapitalize", false);
+alias(String, "camelcasify",  "camelCasify",  false);
+alias(String, "toLowerCase",  "toLower",      false);
+alias(String, "toLowerCase",  "lower",        false);
+alias(String, "toUpperCase",  "toUpper",      false);
+alias(String, "toUpperCase",  "upper",        false);
+alias(String, "first",        "firstChar",    false);
+alias(String, "last",         "lastChar",     false);
 console.groupEnd();
 
 //titlecasify -> Title Case is Geweldig!

@@ -86,8 +86,8 @@ function toNumber(value) {
 	return grabbed.length === 1 ? grabbed[0] : grabbed;
 });
 
-console.groupCollapsed("Aliasing...");
-(0, _Alias2.default)(Array, "average", "avg");
-(0, _Alias2.default)(Array, "reject", "without");
-(0, _Alias2.default)(Array, "clone", "copy");
+console.groupCollapsed("Aliasing Array methods...");
+(0, _Alias2.default)(Array, "average", "avg", false);
+(0, _Alias2.default)(Array, "reject", "without", false);
+(0, _Alias2.default)(Array, "clone", "copy", false);
 console.groupEnd();

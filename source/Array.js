@@ -65,8 +65,8 @@ extendPrototype(Array, function grab (start, end = start + 1) {
 });
 
 import alias from "./Alias.js";
-console.groupCollapsed("Aliasing...");
-alias(Array, "average", "avg");
-alias(Array, "reject",  "without");
-alias(Array, "clone",   "copy");
+console.groupCollapsed("Aliasing Array methods...");
+alias(Array, "average", "avg",     false);
+alias(Array, "reject",  "without", false);
+alias(Array, "clone",   "copy",    false);
 console.groupEnd();
