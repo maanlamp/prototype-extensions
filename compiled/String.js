@@ -49,11 +49,9 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 	switch (typeof length === "undefined" ? "undefined" : _typeof(length)) {
 		case "number":
 			return this.padLeft(length, padString).padRight(length, padString.reverse());
-			break;
 		case "string":
 			padString = length;
 			return padString + this + padString.reverse();
-			break;
 		default:
 			throw new Error("Cannot pad with " + length);
 	}
@@ -66,11 +64,9 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 	switch (typeof length === "undefined" ? "undefined" : _typeof(length)) {
 		case "number":
 			return padString.repeat(length) + this;
-			break;
 		case "string":
 			padString = length;
 			return padString + this;
-			break;
 		default:
 			throw new Error("Cannot pad with " + length);
 	}
@@ -83,11 +79,9 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 	switch (typeof length === "undefined" ? "undefined" : _typeof(length)) {
 		case "number":
 			return this + padString.repeat(length);
-			break;
 		case "string":
 			padString = length;
 			return this + padString;
-			break;
 		default:
 			throw new Error("Cannot pad with " + length);
 	}
@@ -133,6 +127,11 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 (0, _Extend2.default)(String, function hyphenate() {
 	return this.words(false).join("-");
+});
+
+(0, _Extend2.default)(String, function inflect(count) {
+	//Declension? Get grammatical number? idk what the best naming is.
+	return count !== 1 ? this + "s" : this;
 });
 
 console.groupCollapsed("Aliasing...");
