@@ -18,7 +18,7 @@ extendPrototype(Array, function pluck (value) {
 			if (value(element)) returnValue.push(element);
 		} else if (typeof value === "object") {
 			//mongo-like querying
-		};
+		}
 	});
 	return returnValue;
 });
