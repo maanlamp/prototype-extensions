@@ -57,7 +57,7 @@ extendPrototype(String, function pad (length = 1, padString = " ") {
 // });
 
 extendPrototype(String, function reverse () {
-	return this.letters().reverse().join("");
+	return [...this].reverse().join("");
 });
 
 extendPrototype(String, function letters () {
