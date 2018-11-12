@@ -69,14 +69,14 @@ extendPrototype(String, function punctuationMarks () {
 });
 
 extendPrototype(String, function escape () {
-	return this.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+	return this.replace(/\W/g, "\\$&");
 });
 
 extendPrototype(String, function characters (ignoreWhitespace = true) {
 	return (ignoreWhitespace) ? this.match(/\S/g) : [...this];
 });
 
-extendPrototype(String, function truncate (length, string = "...") {
+extendPrototype(String, function truncate (length, symbol = "...") {
 	return `${this.slice(0, length)}${string}`;
 });
 
