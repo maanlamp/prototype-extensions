@@ -14,9 +14,10 @@ require("prototype-extensions/String"); //Extend the String prototype
 
 ## Content
 - [You're doing what-now?](#you're%20doing%20what-now?)
+- [Handy info before reading the docs](#handy%20info%20before%20reading%20the%20docs)
 - [Extended Prototypes](#extended%20prototypes)
-	- [String](#string)
-	- [Array](#array)
+  - [String](#string)
+  - [Array](#array)
 - [Future](#future)
 
 ## You're doing what-now?
@@ -43,10 +44,18 @@ This way I don't create enumerable properties that show up when you use builtin 
 
 I plan on checking if a method already exists instead of just creating it, but that's future stuff.
 
+## Handy info before reading the docs
+Every method declared by this library is documented as such:
+
+<a name="example_method" href="#example_method">#️⃣</a> _Example_.**methodName** ( _argument_: <u>type</u> = `default value`) / _Example_.**alternativeName** ( _argument_: <u>type</u> = `default value`) [</>](#example_method)
+
+- The [#️⃣](#example_method) Emoji is an anchor to link to this part of the documentation (aka what you're reading right now! 😱).
+- The [</>](#example_method) symbol links to the place where the method is declared in the source code (not the compiled code).
+
 ## Extended Prototypes
 
 ### String
-<a name="string_capitalise" href="#string_capitalise">#</a> _String_.**capitalise** ( ) / _String_.**capitalize** ( ) [<>](./source/String.js#L4)
+<a name="string_capitalise" href="#string_capitalise">#️⃣</a> _String_.**capitalise** ( ) / _String_.**capitalize** ( ) [</>](./source/String.js#L4)
 
 Calling this function on a string will _Capitalise_ it.
 ```js
@@ -56,7 +65,7 @@ Calling this function on a string will _Capitalise_ it.
 // > Wolfgang Amadeus Mozart
 ```
 ---
-<a name="string_decapitalise" href="#string_decapitalise">#</a> _String_.**decapitalise** ( ) / _String_.**decapitalize** ( ) [<>](./source/String.js#L8)
+<a name="string_decapitalise" href="#string_decapitalise">#️⃣</a> _String_.**decapitalise** ( ) / _String_.**decapitalize** ( ) [</>](./source/String.js#L8)
 
 Calling this function on a string will _decapitalise_ it.
 ```js
@@ -66,7 +75,7 @@ Calling this function on a string will _decapitalise_ it.
 // > wolfgang amadeus mozart
 ```
 ---
-<a name="string_camelcasify" href="#string_camelcasify">#</a> _String_.**camelcasify** ( ) / _String_.**camelCasify** ( ) [<>](./source/String.js#L12)
+<a name="string_camelcasify" href="#string_camelcasify">#️⃣</a> _String_.**camelcasify** ( ) / _String_.**camelCasify** ( ) [</>](./source/String.js#L12)
 
 Calling this function on a string will _camelCasify_ it.
 ```js
@@ -80,7 +89,7 @@ Calling this function on a string will _camelCasify_ it.
 // > "myNameIsJeff"
 ```
 ---
-<a name="string_first" href="#string_first">#</a> _String_.**first** ( _count_: <u>number</u> = `1` ) [<>](./source/String.js#L17)
+<a name="string_first" href="#string_first">#️⃣</a> _String_.**first** ( _count_: <u>number</u> = `1` ) [</>](./source/String.js#L17)
 
 Gets the first _count_ characters from a string. _Count_ defaults to one, so that
 ```js
@@ -88,7 +97,7 @@ Gets the first _count_ characters from a string. _Count_ defaults to one, so tha
 // > "H"
 ```
 ---
-<a name="string_last" href="#string_last">#</a> _String_.**last** ( _count_: <u>number</u> = `1` ) [<>](./source/String.js#L21)
+<a name="string_last" href="#string_last">#️⃣</a> _String_.**last** ( _count_: <u>number</u> = `1` ) [</>](./source/String.js#L21)
 
 Gets the last _count_ charachters from a string. _Count_ defaults to one, so that
 ```js
@@ -96,19 +105,19 @@ Gets the last _count_ charachters from a string. _Count_ defaults to one, so tha
 // > "d"
 ```
 ---
-<a name="string_pad" href="#string_pad">#</a> _String_.**pad** ( count: <u>string</u> = `1`, padding?: <u>string</u> = `" "` ) [<>](./source/String.js#L25)
+<a name="string_pad" href="#string_pad">#️⃣</a> _String_.**pad** ( count: <u>string</u> = `1`, padding?: <u>string</u> = `" "` ) [</>](./source/String.js#L25)
 
 Pads a string on both sides with a given _padding_ repeated _count_ times.
 When calling the function without a specified _padding_, it will be padded with `" "` (U+0020 'SPACE').
 
 ---
-<a name="string_padLeft" href="#string_padLeft">#</a> _String_.**padLeft** ( count: <u>string</u> = `1`, padding?: <u>string</u> = `" "` ) [<>](./source/String.js#L37)
+<a name="string_padLeft" href="#string_padLeft">#️⃣</a> _String_.**padLeft** ( count: <u>string</u> = `1`, padding?: <u>string</u> = `" "` ) [</>](./source/String.js#L37)
 >**DEPRECATED:** _use JavaScript's builtin String.padStart instead_.
 ---
-<a name="string_padRight" href="#string_padRight">#</a> _String_.**padRight** ( count: <u>string</u> = `1`, padding?: <u>string</u> = `" "` ) [<>](./source/String.js#L48)
+<a name="string_padRight" href="#string_padRight">#️⃣</a> _String_.**padRight** ( count: <u>string</u> = `1`, padding?: <u>string</u> = `" "` ) [</>](./source/String.js#L48)
 >**DEPRECATED:** _use JavaScript's builtin String.padEnd instead_.
 ---
-<a name="string_reverse" href="#string_reverse">#</a> _String_.**reverse** ( ) [<>](./source/String.js#L59)
+<a name="string_reverse" href="#string_reverse">#️⃣</a> _String_.**reverse** ( ) [</>](./source/String.js#L59)
 
 Reverses a string.
 ```js
@@ -116,7 +125,7 @@ Reverses a string.
 // > "!gnirts elbisreveR"
 ```
 ---
-<a name="string_letters" href="#string_letters">#</a> _String_.**letters** ( ) [<>](./source/String.js#L63)
+<a name="string_letters" href="#string_letters">#️⃣</a> _String_.**letters** ( ) [</>](./source/String.js#L63)
 
 Returns an array filled with all letters in a string.
 ```js
@@ -124,7 +133,7 @@ Returns an array filled with all letters in a string.
 // > ["S", "t", "r", "i", "n", "g", "t", "h", "a", "t", "c", "o", "n", "t", "a", "i", "n", "s", "l", "e", "t", "t", "e", "r", "s"]
 ```
 ---
-<a name="string_punctuationMarks" href="#string_punctuationMarks">#</a> _String_.**punctuationMarks** ( ) [<>](./source/String.js#L67)
+<a name="string_punctuationMarks" href="#string_punctuationMarks">#️⃣</a> _String_.**punctuationMarks** ( ) [</>](./source/String.js#L67)
 
 Returns an array filled with all punctuation marks in a string.
 ```js
@@ -132,7 +141,7 @@ Returns an array filled with all punctuation marks in a string.
 // > [",", """, "'", "'", """, "-", "-", "."]
 ```
 ---
-<a name="string_escape" href="#string_escape">#</a> _String_.**escape** ( ) [<>](./source/String.js#L71)
+<a name="string_escape" href="#string_escape">#️⃣</a> _String_.**escape** ( ) [</>](./source/String.js#L71)
 
 Escapes all non-word characters as defined by JavaScript's _RegExp_ engine.
 
@@ -141,7 +150,7 @@ Escapes all non-word characters as defined by JavaScript's _RegExp_ engine.
 // > "Hello\,\ my\ name\ is\ \"Barg\'um\ G\'act\"\ \-\-\ and\ I\ speak\ Klingon\."
 ```
 ---
-<a name="string_characters" href="#string_characters">#</a> _String_.**characters** ( _ignoreWhiteSpace_: <u>boolean</u> = false ) [<>](./source/String.js#L75)
+<a name="string_characters" href="#string_characters">#️⃣</a> _String_.**characters** ( _ignoreWhiteSpace_: <u>boolean</u> = false ) [</>](./source/String.js#L75)
 
 Returns an array filled with all characters in a string. `ignoreWhiteSpace` is a boolean that, when false, will also include whitespace.
 ```js
@@ -152,7 +161,7 @@ Returns an array filled with all characters in a string. `ignoreWhiteSpace` is a
 // > ["H", "e", "l", "l", "o", ",", " ", "m", "y", " ", "n", "a", "m", "e", " ", "i", "s", " ", """, "B", "a", "r", "g", "'", "u", "m", " ", "G", "'", "a", "c", "t", """, " ", "-", "-", " ", "a", "n", "d", " ", "I", " ", "s", "p", "e", "a", "k", " ", "K", "l", "i", "n", "g", "o", "n", "."]
 ```
 ---
-<a name="string_truncate" href="#string_truncate">#</a> _String_.**truncate** ( length: <u>number</u>, symbol?: <u>string</u> = `"..."`) [<>](./source/String.js#L79)
+<a name="string_truncate" href="#string_truncate">#️⃣</a> _String_.**truncate** ( length: <u>number</u>, symbol?: <u>string</u> = `"..."`) [</>](./source/String.js#L79)
 
 Truncates a string to a certain _length_, appending _symbol_ to it.
 ```js
@@ -160,7 +169,7 @@ Truncates a string to a certain _length_, appending _symbol_ to it.
 // > "This is a..."
 ```
 ---
-<a name="string_words" href="#string_words">#</a> _String_.**words** ( includeSpecialCharacters: <u>boolean</u> = `false` ) [<>](./source/String.js#L83)
+<a name="string_words" href="#string_words">#️⃣</a> _String_.**words** ( includeSpecialCharacters: <u>boolean</u> = `false` ) [</>](./source/String.js#L83)
 
 Returns an array filled with the words in a string. Setting `includeSpecialCharacters` to true should be a bit more useful for strings with a lot of diacritic marks (e.g. French sentences), but doesn't work that well.
 ```js
@@ -168,11 +177,11 @@ Returns an array filled with the words in a string. Setting `includeSpecialChara
 // > ["Neque", "porro", "quisquam", "est", "qui", "dolorem", "ipsum", "quia", "dolor", "sit", "amet", "consectetur", "adipisci", "velit"]
 ```
 ---
-<a name="string_wordCount" href="#string_wordCount">#</a> _String_.**wordCount** ( ) [<>](./source/String.js#L87)
+<a name="string_wordCount" href="#string_wordCount">#️⃣</a> _String_.**wordCount** ( ) [</>](./source/String.js#L87)
 
 Returns the amount of words found by the _String_.**wordCount**() function.
 ---
-<a name="string_hyphenate" href="#string_hyphenate">#</a> _String_.**hyphenate** ( ) [<>](./source/String.js#L91)
+<a name="string_hyphenate" href="#string_hyphenate">#️⃣</a> _String_.**hyphenate** ( ) [</>](./source/String.js#L91)
 
 Replaces all word breaks by hyphens.
 ```js
@@ -180,7 +189,7 @@ Replaces all word breaks by hyphens.
 // > "Neque-porro-quisquam-est-qui-dolorem-ipsum-quia-dolor-sit-amet-consectetur-adipisci-velit"
 ```
 ---
-<a name="string_inflect" href="#string_inflect">#</a> _String_.**inflect** ( count: <u>number</u> ) [<>](./source/String.js#L95)
+<a name="string_inflect" href="#string_inflect">#️⃣</a> _String_.**inflect** ( count: <u>number</u> ) [</>](./source/String.js#L95)
 
 Inflect the string to the correct count of things it describes. That's quite vague, so heres an example:
 ```js
@@ -198,57 +207,57 @@ dogs.push("Barry the Dog"); // dogs.length === 2
 ```
 
 ### Array
-<a name="array_average" href="#array_average">#</a> _Array_.**average** ( ) [<>](sourcefile)
+<a name="array_average" href="#array_average">#️⃣</a> _Array_.**average** ( ) [</>](sourcefile)
 
 Description
 
 ---
-<a name="array_pluck" href="#array_pluck">#</a> _Array_.**pluck** ( ) [<>](sourcefile)
+<a name="array_pluck" href="#array_pluck">#️⃣</a> _Array_.**pluck** ( ) [</>](sourcefile)
 
 Description
 
 ---
-<a name="array_reject" href="#array_reject">#</a> _Array_.**reject** ( ) [<>](sourcefile)
+<a name="array_reject" href="#array_reject">#️⃣</a> _Array_.**reject** ( ) [</>](sourcefile)
 
 Description
 
 ---
-<a name="array_max" href="#array_max">#</a> _Array_.**max** ( ) [<>](sourcefile)
+<a name="array_max" href="#array_max">#️⃣</a> _Array_.**max** ( ) [</>](sourcefile)
 
 Description
 
 ---
-<a name="array_min" href="#array_min">#</a> _Array_.**min** ( ) [<>](sourcefile)
+<a name="array_min" href="#array_min">#️⃣</a> _Array_.**min** ( ) [</>](sourcefile)
 
 Description
 
 ---
-<a name="array_first" href="#array_first">#</a> _Array_.**first** ( ) [<>](sourcefile)
+<a name="array_first" href="#array_first">#️⃣</a> _Array_.**first** ( ) [</>](sourcefile)
 
 Description
 
 ---
-<a name="array_last" href="#array_last">#</a> _Array_.**last** ( ) [<>](sourcefile)
+<a name="array_last" href="#array_last">#️⃣</a> _Array_.**last** ( ) [</>](sourcefile)
 
 Description
 
 ---
-<a name="array_clone" href="#array_clone">#</a> _Array_.**clone** ( ) [<>](sourcefile)
+<a name="array_clone" href="#array_clone">#️⃣</a> _Array_.**clone** ( ) [</>](sourcefile)
 
 Description
 
 ---
-<a name="array_remove" href="#array_remove">#</a> _Array_.**remove** ( ) [<>](sourcefile)
+<a name="array_remove" href="#array_remove">#️⃣</a> _Array_.**remove** ( ) [</>](sourcefile)
 
 Description
 
 ---
-<a name="array_clear" href="#array_clear">#</a> _Array_.**clear** ( ) [<>](sourcefile)
+<a name="array_clear" href="#array_clear">#️⃣</a> _Array_.**clear** ( ) [</>](sourcefile)
 
 Description
 
 ---
-<a name="array_grab" href="#array_grab">#</a> _Array_.**grab** ( ) [<>](sourcefile)
+<a name="array_grab" href="#array_grab">#️⃣</a> _Array_.**grab** ( ) [</>](sourcefile)
 
 Description
 
