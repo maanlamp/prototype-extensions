@@ -153,7 +153,7 @@ Returns an array filled with all punctuation marks in a string.
 Escapes all non-word characters as defined by JavaScript's _RegExp_ engine.
 
 ```js
-`Hello, my name is "Barg'um G'act" -- and I speak Klingon.`.punctuationMarks();
+`Hello, my name is "Barg'um G'act" -- and I speak Klingon.`.escape();
 // > "Hello\,\ my\ name\ is\ \"Barg\'um\ G\'act\"\ \-\-\ and\ I\ speak\ Klingon\."
 ```
 ---
