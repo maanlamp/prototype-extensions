@@ -99,7 +99,7 @@ Gets the first _count_ characters from a string. _Count_ defaults to one, so tha
 ---
 <a name="string_last" href="#string_last">#️⃣</a> _String_.**last** ( _count_: <u>number</u> = `1` ) [</>](./source/String.js#L21)
 
-Gets the last _count_ charachters from a string. _Count_ defaults to one, so that
+Gets the last _count_ characters from a string. _Count_ defaults to one, so that
 ```js
 "Hello World".last();
 // > "d"
