@@ -61,7 +61,7 @@ Calling this function on a string will _Capitalise_ it.
 Calling this function on a string will _decapitalise_ it.
 ```js
 ["Wolfgang", "Amadeus", "Mozart"]
-  .map(name => name.capitalise())
+  .map(name => name.decapitalise())
   .join(" ");
 // > wolfgang amadeus mozart
 ```
