@@ -46,7 +46,7 @@ I plan on checking if a method already exists instead of just creating it, but t
 ## Extended Prototypes
 
 ### String
-- [#](link) _String_.**capitalise** ( ) / _String_.**capitalize** ( ) [<>](sourcefile)
+<a name="string_capitalise" href="#string_capitalise">#</a> _String_.**capitalise** ( ) / _String_.**capitalize** ( ) [<>](./source/String.js#L4)
 
 Calling this function on a string will _Capitalise_ it.
 ```js
@@ -55,8 +55,8 @@ Calling this function on a string will _Capitalise_ it.
   .join(" ");
 // > Wolfgang Amadeus Mozart
 ```
-
-- [#](link) _String_.**decapitalise** ( ) / _String_.**decapitalize** ( ) [<>](sourcefile)
+---
+<a name="string_decapitalise" href="#string_decapitalise">#</a> _String_.**decapitalise** ( ) / _String_.**decapitalize** ( ) [<>](./source/String.js#L8)
 
 Calling this function on a string will _decapitalise_ it.
 ```js
@@ -65,8 +65,8 @@ Calling this function on a string will _decapitalise_ it.
   .join(" ");
 // > wolfgang amadeus mozart
 ```
-
-- [#](link) _String_.**camelcasify** ( ) / _String_.**camelCasify** ( ) [<>](sourcefile)
+---
+<a name="string_camelcasify" href="#string_camelcasify">#</a> _String_.**camelcasify** ( ) / _String_.**camelCasify** ( ) [<>](./source/String.js#L12)
 
 Calling this function on a string will _camelCasify_ it.
 ```js
@@ -79,59 +79,60 @@ Calling this function on a string will _camelCasify_ it.
 "My_name_is_Jeff".camelcasify();
 // > "myNameIsJeff"
 ```
-
-- [#](link) _String_.**first** ( _count_: <u>number</u> = `1` ) [<>](sourcefile)
+---
+<a name="string_first" href="#string_first">#</a> _String_.**first** ( _count_: <u>number</u> = `1` ) [<>](./source/String.js#L17)
 
 Gets the first _count_ charachters from a string. _Count_ defaults to one, so that
 ```js
 "Hello World".first();
 // > "H"
 ```
-
-- [#](link) _String_.**last** ( _count_: <u>number</u> = `1` ) [<>](sourcefile)
+---
+<a name="string_last" href="#string_last">#</a> _String_.**last** ( _count_: <u>number</u> = `1` ) [<>](./source/String.js#L21)
 
 Gets the last _count_ charachters from a string. _Count_ defaults to one, so that
 ```js
 "Hello World".last();
 // > "d"
 ```
-
-- [#](link) _String_.**pad** ( count: <u>string</u> = `1`, padding?: <u>string</u> = `" "` ) [<>](sourcefile)
+---
+<a name="string_pad" href="#string_pad">#</a> _String_.**pad** ( count: <u>string</u> = `1`, padding?: <u>string</u> = `" "` ) [<>](./source/String.js#L25)
 
 Pads a string on both sides with a given _padding_ repeated _count_ times.
 When calling the function without a specified _padding_, it will be padded with `" "` (U+0020 'SPACE').
 
-- [#](link) _String_.**padLeft** ( count: <u>string</u> = `1`, padding?: <u>string</u> = `" "` ) [<>](sourcefile)
+---
+<a name="string_padLeft" href="#string_padLeft">#</a> _String_.**padLeft** ( count: <u>string</u> = `1`, padding?: <u>string</u> = `" "` ) [<>](./source/String.js#L37)
 >**DEPRECATED:** _use JavaScript's builtin String.padStart instead_.
-
-- [#](link) _String_.**padRight** ( count: <u>string</u> = `1`, padding?: <u>string</u> = `" "` ) [<>](sourcefile)
+---
+<a name="string_padRight" href="#string_padRight">#</a> _String_.**padRight** ( count: <u>string</u> = `1`, padding?: <u>string</u> = `" "` ) [<>](./source/String.js#L48)
 >**DEPRECATED:** _use JavaScript's builtin String.padEnd instead_.
-
-- [#](link) _String_.**reverse** ( ) [<>](sourcefile)
+---
+<a name="string_reverse" href="#string_reverse">#</a> _String_.**reverse** ( ) [<>](./source/String.js#L59)
 
 Reverses a string.
 ```js
 "Reversible string!".reverse();
 // > "!gnirts elbisreveR"
 ```
-
-- [#](link) _String_.**letters** ( ) [<>](sourcefile)
+---
+<a name="string_letters" href="#string_letters">#</a> _String_.**letters** ( ) [<>](./source/String.js#L63)
 
 Returns an array filled with all letters in a string.
 ```js
 "String, that-contains; let'ters.".letters();
 // > ["S", "t", "r", "i", "n", "g", "t", "h", "a", "t", "c", "o", "n", "t", "a", "i", "n", "s", "l", "e", "t", "t", "e", "r", "s"]
 ```
-
-- [#](link) _String_.**punctuationMarks** ( ) [<>](sourcefile)
+---
+<a name="string_punctuationMarks" href="#string_punctuationMarks">#</a> _String_.**punctuationMarks** ( ) [<>](./source/String.js#L67)
 
 Returns an array filled with all punctuation marks in a string.
 ```js
 `Hello, my name is "Barg'um G'act" -- and I speak Klingon.`.punctuationMarks();
 // > [",", """, "'", "'", """, "-", "-", "."]
 ```
-
-- [#](link) _String_.**escape** ( ) [<>](sourcefile)
+---
+<a name="string_escape" href="#string_escape">#</a> _String_.**escape** ( ) [<>](./source/String.js#L71)
 
 Escapes all non-word characters as defined by JavaScript's _RegExp_ engine.
 
@@ -139,8 +140,8 @@ Escapes all non-word characters as defined by JavaScript's _RegExp_ engine.
 `Hello, my name is "Barg'um G'act" -- and I speak Klingon.`.punctuationMarks();
 // > "Hello\,\ my\ name\ is\ \"Barg\'um\ G\'act\"\ \-\-\ and\ I\ speak\ Klingon\."
 ```
-
-- [#](link) _String_.**characters** ( _ignoreWhiteSpace_: <u>boolean</u> = false ) [<>](sourcefile)
+---
+<a name="string_characters" href="#string_characters">#</a> _String_.**characters** ( _ignoreWhiteSpace_: <u>boolean</u> = false ) [<>](./source/String.js#L75)
 
 Returns an array filled with all characters in a string. `ignoreWhiteSpace` is a boolean that, when false, will also include whitespace.
 ```js
@@ -150,36 +151,36 @@ Returns an array filled with all characters in a string. `ignoreWhiteSpace` is a
 `Hello, my name is "Barg'um G'act" -- and I speak Klingon.`.characters(false);
 // > ["H", "e", "l", "l", "o", ",", " ", "m", "y", " ", "n", "a", "m", "e", " ", "i", "s", " ", """, "B", "a", "r", "g", "'", "u", "m", " ", "G", "'", "a", "c", "t", """, " ", "-", "-", " ", "a", "n", "d", " ", "I", " ", "s", "p", "e", "a", "k", " ", "K", "l", "i", "n", "g", "o", "n", "."]
 ```
-
-- [#](link) _String_.**truncate** ( length: <u>number</u>, symbol?: <u>string</u> = `"..."`) [<>](sourcefile)
+---
+<a name="string_truncate" href="#string_truncate">#</a> _String_.**truncate** ( length: <u>number</u>, symbol?: <u>string</u> = `"..."`) [<>](./source/String.js#L79)
 
 Truncates a string to a certain _length_, appending _symbol_ to it.
 ```js
 "This is a string that's quite long. Let's truncate it!".truncate(9);
 // > "This is a..."
 ```
-
-- [#](link) _String_.**words** ( includeSpecialCharacters: <u>boolean</u> = `false` ) [<>](sourcefile)
+---
+<a name="string_words" href="#string_words">#</a> _String_.**words** ( includeSpecialCharacters: <u>boolean</u> = `false` ) [<>](./source/String.js#L83)
 
 Returns an array filled with the words in a string. Setting `includeSpecialCharacters` to true should be a bit more useful for strings with a lot of diacritic marks (e.g. French sentences), but doesn't work that well.
 ```js
 "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...".words();
 // > ["Neque", "porro", "quisquam", "est", "qui", "dolorem", "ipsum", "quia", "dolor", "sit", "amet", "consectetur", "adipisci", "velit"]
 ```
-
-- [#](link) _String_.**wordCount** ( ) [<>](sourcefile)
+---
+<a name="string_wordCount" href="#string_wordCount">#</a> _String_.**wordCount** ( ) [<>](./source/String.js#L87)
 
 Returns the amount of words found by the _String_.**wordCount**() function.
-
-- [#](link) _String_.**hyphenate** ( ) [<>](sourcefile)
+---
+<a name="string_hyphenate" href="#string_hyphenate">#</a> _String_.**hyphenate** ( ) [<>](./source/String.js#L91)
 
 Replaces all word breaks by hyphens.
 ```js
 "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...".hyphenate();
 // > "Neque-porro-quisquam-est-qui-dolorem-ipsum-quia-dolor-sit-amet-consectetur-adipisci-velit"
 ```
-
-- [#](link) _String_.**inflect** ( count: <u>number</u> ) [<>](sourcefile)
+---
+<a name="string_inflect" href="#string_inflect">#</a> _String_.**inflect** ( count: <u>number</u> ) [<>](./source/String.js#L95)
 
 Inflect the string to the correct count of things it describes. That's quite vague, so heres an example:
 ```js
@@ -197,52 +198,61 @@ dogs.push("Barry the Dog"); // dogs.length === 2
 ```
 
 ### Array
-- [#](link) _Array_.**average** ( ) [<>](sourcefile)
+<a name="array_average" href="#array_average">#</a> _Array_.**average** ( ) [<>](sourcefile)
 
 Description
 
-- [#](link) _Array_.**pluck** ( ) [<>](sourcefile)
-
-Description
-	return returnValue;
-});
-
-- [#](link) _Array_.**reject** ( ) [<>](sourcefile)
+---
+<a name="array_pluck" href="#array_pluck">#</a> _Array_.**pluck** ( ) [<>](sourcefile)
 
 Description
 
-- [#](link) _Array_.**max** ( ) [<>](sourcefile)
+---
+<a name="array_reject" href="#array_reject">#</a> _Array_.**reject** ( ) [<>](sourcefile)
 
 Description
 
-- [#](link) _Array_.**min** ( ) [<>](sourcefile)
+---
+<a name="array_max" href="#array_max">#</a> _Array_.**max** ( ) [<>](sourcefile)
 
 Description
 
-- [#](link) _Array_.**first** ( ) [<>](sourcefile)
+---
+<a name="array_min" href="#array_min">#</a> _Array_.**min** ( ) [<>](sourcefile)
 
 Description
 
-- [#](link) _Array_.**last** ( ) [<>](sourcefile)
+---
+<a name="array_first" href="#array_first">#</a> _Array_.**first** ( ) [<>](sourcefile)
 
 Description
 
-- [#](link) _Array_.**clone** ( ) [<>](sourcefile)
+---
+<a name="array_last" href="#array_last">#</a> _Array_.**last** ( ) [<>](sourcefile)
 
 Description
 
-- [#](link) _Array_.**remove** ( ) [<>](sourcefile)
+---
+<a name="array_clone" href="#array_clone">#</a> _Array_.**clone** ( ) [<>](sourcefile)
 
 Description
 
-- [#](link) _Array_.**clear** ( ) [<>](sourcefile)
+---
+<a name="array_remove" href="#array_remove">#</a> _Array_.**remove** ( ) [<>](sourcefile)
 
 Description
 
-- [#](link) _Array_.**grab** ( ) [<>](sourcefile)
+---
+<a name="array_clear" href="#array_clear">#</a> _Array_.**clear** ( ) [<>](sourcefile)
 
 Description
 
+---
+<a name="array_grab" href="#array_grab">#</a> _Array_.**grab** ( ) [<>](sourcefile)
+
+Description
+
+---
 ## Future
 If you want me to add any extensions, just ask. If you want to contribute, just make a PR. If you think this is a nice library, give it a star (and consider following me).
 
