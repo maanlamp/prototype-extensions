@@ -91,18 +91,25 @@ Calling this function on a string will _camelCasify_ it.
 ---
 <a name="string_first" href="#string_first">#️⃣</a> _String_.**first** ( _count_: <u>number</u> = `1` ) [</>](./source/String.js#L17)
 
-Gets the first _count_ characters from a string. _Count_ defaults to one, so that
+Gets the first _count_ characters from a string. _Count_ defaults to one.
 ```js
 "Hello World".first();
 // > "H"
+
+"Hello World".first(3);
+// > "Hell"
+// Woah... 😲
 ```
 ---
 <a name="string_last" href="#string_last">#️⃣</a> _String_.**last** ( _count_: <u>number</u> = `1` ) [</>](./source/String.js#L21)
 
-Gets the last _count_ characters from a string. _Count_ defaults to one, so that
+Gets the last _count_ characters from a string. _Count_ defaults to one.
 ```js
 "Hello World".last();
 // > "d"
+
+"Hello World".last(3);
+// > "rld"
 ```
 ---
 <a name="string_pad" href="#string_pad">#️⃣</a> _String_.**pad** ( count: <u>string</u> = `1`, padding?: <u>string</u> = `" "` ) [</>](./source/String.js#L25)
