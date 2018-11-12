@@ -82,7 +82,7 @@ Calling this function on a string will _camelCasify_ it.
 ---
 <a name="string_first" href="#string_first">#</a> _String_.**first** ( _count_: <u>number</u> = `1` ) [<>](./source/String.js#L17)
 
-Gets the first _count_ charachters from a string. _Count_ defaults to one, so that
+Gets the first _count_ characters from a string. _Count_ defaults to one, so that
 ```js
 "Hello World".first();
 // > "H"
