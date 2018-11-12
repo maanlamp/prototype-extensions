@@ -77,7 +77,7 @@ extendPrototype(String, function characters (ignoreWhitespace = true) {
 });
 
 extendPrototype(String, function truncate (length, symbol = "...") {
-	return `${this.slice(0, length)}${string}`;
+	return `${this.slice(0, length)}${symbol}`;
 });
 
 extendPrototype(String, function words (includeSpecialCharacters = true) {
