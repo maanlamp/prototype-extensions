@@ -1,7 +1,8 @@
 import extendPrototype from "./Extend.js";
 
 function toNumber(value) {
-	return Number(value) || 0;
+	const num = Number(value);
+	return (!isNaN(num) && num) || 0;
 }
 
 extendPrototype(Array, function average () {
@@ -29,11 +30,11 @@ extendPrototype(Array, function reject (value) {
 });
 
 extendPrototype(Array, function max () {
-	return this.reduce((max, current) => Math.max(max, toNumber(current)));
+	return this.reduce((max, current) => Math.max(max, toNumber(current)), toNumber(this[0]));
 });
 
 extendPrototype(Array, function min () {
-	return this.reduce((min, current) => Math.min(min, toNumber(current)));
+	return this.reduce((min, current) => Math.min(min, toNumber(current)), toNumber(this[0]));
 });
 
 extendPrototype(Array, function first ( count = 1) {
