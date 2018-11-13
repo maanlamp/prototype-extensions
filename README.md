@@ -77,6 +77,8 @@ Every method declared by this library is documented as such:
 - The [#️⃣](#example_method) Emoji is an anchor to link to this part of the documentation (aka what you're reading right now! 😱).
 - The [</>](#example_method) symbol links to the place where the method is declared in the source code (not the compiled code).
 
+I don't use TypeScript for this project (yet?), so the types aren't enforced. It's just for clarity.
+
 ## Extended Prototypes
 
 ### String
