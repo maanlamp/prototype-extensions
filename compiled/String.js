@@ -48,7 +48,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 	switch (typeof length === "undefined" ? "undefined" : _typeof(length)) {
 		case "number":
-			return this.padLeft(length, padString).padRight(length, padString.reverse());
+			return this.padStart(length, padString).padEnd(length, padString.reverse());
 		case "string":
 			padString = length;
 			return padString + this + padString.reverse();
@@ -57,38 +57,31 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 	}
 });
 
-(0, _Extend2.default)(String, function padLeft() {
-	var length = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-	var padString = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : " ";
+// DEPRECATED
+// extendPrototype(String, function padLeft (length = 1, padString = " ") {
+// 	switch (typeof length) {
+// 		case "number":
+// 			return padString.repeat(length) + this;
+// 		case "string":
+// 			padString = length;
+// 			return padString + this;
+// 		default: throw new Error(`Cannot pad with ${length}`);
+// 	}
+// });
 
-	switch (typeof length === "undefined" ? "undefined" : _typeof(length)) {
-		case "number":
-			return padString.repeat(length) + this;
-		case "string":
-			padString = length;
-			return padString + this;
-		default:
-			throw new Error("Cannot pad with " + length);
-	}
-});
-
-(0, _Extend2.default)(String, function padRight() {
-	var length = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-	var padString = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : " ";
-
-	switch (typeof length === "undefined" ? "undefined" : _typeof(length)) {
-		case "number":
-			return this + padString.repeat(length);
-		case "string":
-			padString = length;
-			return this + padString;
-		default:
-			throw new Error("Cannot pad with " + length);
-	}
-});
+// extendPrototype(String, function padRight (length = 1, padString = " ") {
+// 	switch (typeof length) {
+// 		case "number":
+// 			return this + padString.repeat(length);
+// 		case "string":
+// 			padString = length;
+// 			return this + padString;
+// 		default: throw new Error(`Cannot pad with ${length}`);
+// 	}
+// });
 
 (0, _Extend2.default)(String, function reverse() {
-	return this.letters().reverse().join("");
+	return [].concat(_toConsumableArray(this)).reverse().join("");
 });
 
 (0, _Extend2.default)(String, function letters() {
@@ -100,7 +93,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 });
 
 (0, _Extend2.default)(String, function escape() {
-	return this.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+	return this.replace(/\W/g, "\\$&");
 });
 
 (0, _Extend2.default)(String, function characters() {
@@ -110,9 +103,9 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 });
 
 (0, _Extend2.default)(String, function truncate(length) {
-	var string = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "...";
+	var symbol = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "...";
 
-	return "" + this.slice(0, length) + string;
+	return "" + this.slice(0, length) + symbol;
 });
 
 (0, _Extend2.default)(String, function words() {
@@ -142,8 +135,6 @@ console.groupCollapsed("Aliasing String methods...");
 (0, _Alias2.default)(String, "toLowerCase", "lower", false);
 (0, _Alias2.default)(String, "toUpperCase", "toUpper", false);
 (0, _Alias2.default)(String, "toUpperCase", "upper", false);
-(0, _Alias2.default)(String, "first", "firstChar", false);
-(0, _Alias2.default)(String, "last", "lastChar", false);
 console.groupEnd();
 
 //titlecasify -> Title Case is Geweldig!

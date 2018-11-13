@@ -13,7 +13,8 @@ var _Alias2 = _interopRequireDefault(_Alias);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function toNumber(value) {
-	return Number(value) || 0;
+	var num = Number(value);
+	return !isNaN(num) && num || 0;
 }
 
 (0, _Extend2.default)(Array, function average() {
@@ -32,7 +33,7 @@ function toNumber(value) {
 			if (value(element)) returnValue.push(element);
 		} else if ((typeof value === "undefined" ? "undefined" : _typeof(value)) === "object") {
 			//mongo-like querying
-		};
+		}
 	});
 	return returnValue;
 });
@@ -47,29 +48,34 @@ function toNumber(value) {
 (0, _Extend2.default)(Array, function max() {
 	return this.reduce(function (max, current) {
 		return Math.max(max, toNumber(current));
-	});
+	}, toNumber(this[0]));
 });
 
 (0, _Extend2.default)(Array, function min() {
 	return this.reduce(function (min, current) {
 		return Math.min(min, toNumber(current));
-	});
+	}, toNumber(this[0]));
 });
 
 (0, _Extend2.default)(Array, function first() {
-	return this[0];
+	var count = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+
+	return this.slice(0, count);
 });
 
 (0, _Extend2.default)(Array, function last() {
-	return this[this.length - 1];
+	var count = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+
+	return this[this.length - count];
 });
 
 (0, _Extend2.default)(Array, function clone() {
 	return this.slice();
 });
 
-(0, _Extend2.default)(Array, function remove(from, to) {
-	if (!to) to = from + 1;
+(0, _Extend2.default)(Array, function remove(from) {
+	var to = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : from + 1;
+
 	this.splice(from, to);
 	return this;
 });
