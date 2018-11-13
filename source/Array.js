@@ -49,8 +49,7 @@ extendPrototype(Array, function clone () {
 	return this.slice();
 });
 
-extendPrototype(Array, function remove (from, to) {
-	if (!to) to = from + 1;
+extendPrototype(Array, function remove (from, to = from + 1) {
 	this.splice(from, to);
 	return this;
 });
