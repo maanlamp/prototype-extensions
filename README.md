@@ -49,7 +49,7 @@ require("prototype-extensions/String"); //Extend the String prototype
 Prototypal inheritance is one of the good parts of JavaScript in my opinion. I've never understood and/or agreed with any arguments against extending prototypes, since all arguments are trivially countered.
 
 **Main argument against extending prototypes:**
-> "Changing the behaviour of an object that will only be used by your own code is fine. But when you change the behaviour of something that is also used by other code there is a risk you will break that other code." - [Abhi Beckert](https://stackoverflow.com/questions/14034180/why-is-extending-native-objects-a-bad-practice)
+> "Changing the behaviour of an object that will only be used by your own code is fine. But when you change the behaviour of something that is also used by other code there is a risk you will break that other code." - [Abhi Beckert (Stack Exchange)](https://stackoverflow.com/questions/14034180/why-is-extending-native-objects-a-bad-practice)
 
 **Why I disagree:**
 
