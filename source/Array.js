@@ -36,12 +36,12 @@ extendPrototype(Array, function min () {
 	return this.reduce((min, current) => Math.min(min, toNumber(current)));
 });
 
-extendPrototype(Array, function first () {
-	return this[0];
+extendPrototype(Array, function first ( count = 1) {
+	return this.slice(0, count);
 });
 
-extendPrototype(Array, function last () {
-	return this[this.length - 1];
+extendPrototype(Array, function last (count = 1) {
+	return this[this.length - count];
 });
 
 extendPrototype(Array, function clone () {
