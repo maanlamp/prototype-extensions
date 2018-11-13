@@ -72,7 +72,7 @@ I plan on checking if a method already exists instead of just creating it, but t
 ## Handy info before reading the docs
 Every method declared by this library is documented as such:
 
-<a name="example_method" href="#example_method">#️⃣</a><code>_ExamplePrototype_.**methodName** ( _argument_<span>:</span> <span>type</span> = <span>default</span> )</code> [</>](#example_method)
+<a name="example_method" href="#example_method">#️⃣</a><code>_ExamplePrototype_.**methodName** ( <span>type</span><span>:</span> _argument_ = <span>default</span> )</code> [</>](#example_method)
 
 - The [#️⃣](#example_method) Emoji is an anchor to link to this part of the documentation (aka what you're reading right now! 😱).
 - The [</>](#example_method) symbol links to the place where the method is declared in the source code (not the compiled code).
@@ -114,7 +114,7 @@ Calling this function on a string will _camelCasify_ it.
 // > "myNameIsJeff"
 ```
 ---
-<a name="string_first" href="#string_first">#️⃣</a><code>_String_.**first** ( _count_<span>:</span> <span>number</span> = <span>1</span> )</code> [</>](./source/String.js#L17)
+<a name="string_first" href="#string_first">#️⃣</a><code>_String_.**first** ( <span>number</span><span>:</span> _count_ = <span>1</span> )</code> [</>](./source/String.js#L17)
 
 Gets the first _count_ characters from a string. _Count_ defaults to one.
 ```js
@@ -126,7 +126,7 @@ Gets the first _count_ characters from a string. _Count_ defaults to one.
 // Woah... 😲
 ```
 ---
-<a name="string_last" href="#string_last">#️⃣</a><code>_String_.**last** ( _count_<span>:</span> <span>number</span> = <span>1</span> )</code> [</>](./source/String.js#L21)
+<a name="string_last" href="#string_last">#️⃣</a><code>_String_.**last** ( <span>number</span><span>:</span> _count_ = <span>1</span> )</code> [</>](./source/String.js#L21)
 
 Gets the last _count_ characters from a string. _Count_ defaults to one.
 ```js
@@ -137,16 +137,16 @@ Gets the last _count_ characters from a string. _Count_ defaults to one.
 // > "rld"
 ```
 ---
-<a name="string_pad" href="#string_pad">#️⃣</a><code>_String_.**pad** ( _count_<span>:</span> <span>string</span> = <span>1</span>, _padding_<span>?:</span> <span>string</span> = <span>" "</span> )</code> [</>](./source/String.js#L25)
+<a name="string_pad" href="#string_pad">#️⃣</a><code>_String_.**pad** ( <span>number</span><span>:</span> _count_ = <span>1</span> [, <span>string</span><span>:</span> _padding_ = <span>" "</span> ])</code> [</>](./source/String.js#L25)
 
 Pads a string on both sides with a given _padding_ repeated _count_ times.
 When calling the function without a specified _padding_, it will be padded with <span>" "</span> (U+0020 'SPACE').
 
 ---
-<a name="string_padLeft" href="#string_padLeft">#️⃣</a><code>_String_.**padLeft** ( _count_<span>:</span> <span>string</span> = <span>1</span>, _padding_<span>?:</span> <span>string</span> = <span>" "</span> )</code> [</>](./source/String.js#L37)
+<a name="string_padLeft" href="#string_padLeft">#️⃣</a><code>_String_.**padLeft** ( <span>number</span><span>:</span> _count_ = <span>1</span> [, <span>string</span><span>:</span> _padding_ = <span>" "</span> ])</code> [</>](./source/String.js#L37)
 >**DEPRECATED:** _use JavaScript's builtin String.padStart instead_.
 ---
-<a name="string_padRight" href="#string_padRight">#️⃣</a><code>_String_.**padRight** ( _count_<span>:</span> <span>string</span> = <span>1</span>, _padding_<span>?:</span> <span>string</span> = <span>" "</span> )</code> [</>](./source/String.js#L48)
+<a name="string_padRight" href="#string_padRight">#️⃣</a><code>_String_.**padRight** ( <span>number</span><span>:</span> _count_ = <span>1</span> [, <span>string</span><span>:</span> _padding_ = <span>" "</span> ])</code> [</>](./source/String.js#L48)
 >**DEPRECATED:** _use JavaScript's builtin String.padEnd instead_.
 ---
 <a name="string_reverse" href="#string_reverse">#️⃣</a><code>_String_.**reverse** ( )</code> [</>](./source/String.js#L59)
@@ -182,7 +182,7 @@ Escapes all non-word characters as defined by JavaScript's _RegExp_ engine.
 // > "Hello\,\ my\ name\ is\ \"Barg\'um\ G\'act\"\ \-\-\ and\ I\ speak\ Klingon\."
 ```
 ---
-<a name="string_characters" href="#string_characters">#️⃣</a><code>_String_.**characters** ( _ignoreWhiteSpace_<span>:</span> <span>boolean</span> = <span>false</span> )</code> [</>](./source/String.js#L75)
+<a name="string_characters" href="#string_characters">#️⃣</a><code>_String_.**characters** ( <span>boolean</span><span>:</span> _ignoreWhiteSpace_ = <span>false</span> )</code> [</>](./source/String.js#L75)
 
 Returns an array filled with all characters in a string. `ignoreWhiteSpace` is a boolean that, when true, will also include whitespace.
 ```js
@@ -193,7 +193,7 @@ Returns an array filled with all characters in a string. `ignoreWhiteSpace` is a
 // > ["H", "e", "l", "l", "o", ",", " ", "m", "y", " ", "n", "a", "m", "e", " ", "i", "s", " ", """, "B", "a", "r", "g", "'", "u", "m", " ", "G", "'", "a", "c", "t", """, " ", "-", "-", " ", "a", "n", "d", " ", "I", " ", "s", "p", "e", "a", "k", " ", "K", "l", "i", "n", "g", "o", "n", "."]
 ```
 ---
-<a name="string_truncate" href="#string_truncate">#️⃣</a><code>_String_.**truncate** ( _length_<span>:</span> <span>number</span>, _symbol_<span>?:</span> <span>string</span> = <span>"..."</span>)</code> [</>](./source/String.js#L79)
+<a name="string_truncate" href="#string_truncate">#️⃣</a><code>_String_.**truncate** ( <span>number</span><span>:</span> _length_, <span>string</span><span>:</span> _symbol_ = <span>"..."</span>)</code> [</>](./source/String.js#L79)
 
 Truncates a string to a certain _length_, appending _symbol_ to it.
 ```js
@@ -201,7 +201,7 @@ Truncates a string to a certain _length_, appending _symbol_ to it.
 // > "This is a..."
 ```
 ---
-<a name="string_words" href="#string_words">#️⃣</a><code>_String_.**words** ( _includeSpecialCharacters_<span>:</span> <span>boolean</span> = <span>false</span> )</code> [</>](./source/String.js#L83)
+<a name="string_words" href="#string_words">#️⃣</a><code>_String_.**words** ( <span>boolean</span><span>:</span> _includeSpecialCharacters_ = <span>false</span> )</code> [</>](./source/String.js#L83)
 
 Returns an array filled with the words in a string. Setting `includeSpecialCharacters` to true should be a bit more useful for strings with a lot of diacritic marks (e.g. French sentences), but doesn't work that well.
 ```js
@@ -222,7 +222,7 @@ Replaces all word breaks by hyphens.
 // > "Neque-porro-quisquam-est-qui-dolorem-ipsum-quia-dolor-sit-amet-consectetur-adipisci-velit"
 ```
 ---
-<a name="string_inflect" href="#string_inflect">#️⃣</a><code>_String_.**inflect** ( _count_<span>:</span> <span>number</span> )</code> [</>](./source/String.js#L95)
+<a name="string_inflect" href="#string_inflect">#️⃣</a><code>_String_.**inflect** ( <span>number</span><span>:</span> _count_ )</code> [</>](./source/String.js#L95)
 
 Inflect the string to the correct count of things it describes. That's quite vague, so heres an example:
 ```js
