@@ -72,7 +72,7 @@ I plan on checking if a method already exists instead of just creating it, but t
 ## Handy info before reading the docs
 Every method declared by this library is documented as such:
 
-<a name="example_method" href="#example_method">#️⃣</a><code>_ExamplePrototype_.**methodName** ( <span>type</span><span>:</span> _argument_ = <span>default</span>[, type: optionalArgument = default])</code> [</>](#example_method)
+<a name="example_method" href="#example_method">#️⃣</a><code>_ExamplePrototype_.**methodName** ( <span>type</span><span>:</span> _argument_ = <span>default</span> [, type: optionalArgument = default])</code> [</>](#example_method)
 
 - The [#️⃣](#example_method) Emoji is an anchor to link to this part of the documentation (aka what you're reading right now! 😱).
 - The [</>](#example_method) symbol links to the place where the method is declared in the source code (not the compiled code).
