@@ -1,3 +1,6 @@
+<!--
+When github starts supporting CSS, enable this :(
+
 <style>
   code>em+strong~em+span+span /*type*/ {
     text-decoration: underline;
@@ -18,6 +21,7 @@
     color: #F9005A;
   }
 </style>
+-->
 
 # prototype-extensions
 My personal prototype extension library. Feel free to use it in your own projects :).
