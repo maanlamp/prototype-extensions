@@ -38,9 +38,9 @@ require("prototype-extensions/String"); //Extend the String prototype
 ```
 
 ## Content
-- [You're doing what-now?](#you're%20doing%20what-now?)
-- [Handy info before reading the docs](#handy%20info%20before%20reading%20the%20docs)
-- [Extended Prototypes](#extended%20prototypes)
+- [You're doing what-now?](#you're-doing-what-now?)
+- [Handy info before reading the docs](#handy-info-before-reading-the-docs)
+- [Extended Prototypes](#extended-prototypes)
   - [String](#string)
   - [Array](#array)
 - [Future](#future)
