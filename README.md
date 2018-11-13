@@ -72,7 +72,7 @@ I plan on checking if a method already exists instead of just creating it, but t
 ## Handy info before reading the docs
 Every method declared by this library is documented as such:
 
-<a name="example_method" href="#example_method">#️⃣</a><code>_ExamplePrototype_.**methodName** ( <span>type</span><span>:</span> _argument_ = <span>default</span> [, type: optionalArgument = default])</code> [</>](#example_method)
+<a name="example_method" href="#example_method">#️⃣</a> <code>_ExamplePrototype_.**methodName** ( <span>type</span><span>:</span> _argument_ = <span>default</span> [, type: optionalArgument])</code> [</>](#example_method)
 
 - The [#️⃣](#example_method) Emoji is an anchor to link to this part of the documentation (aka what you're reading right now! 😱).
 - The [</>](#example_method) symbol links to the place where the method is declared in the source code (not the compiled code).
@@ -82,7 +82,7 @@ I don't use TypeScript for this project (yet?), so the types aren't enforced. It
 ## Extended Prototypes
 
 ### String
-<a name="string_capitalise" href="#string_capitalise">#️⃣</a><code>_String_.**capitalise** ( )</code> / <code>_String_.**capitalize** ( )</code> [</>](./source/String.js#L4)
+<a name="string_capitalise" href="#string_capitalise">#️⃣</a> <code>_String_.**capitalise** ( )</code> / <code>_String_.**capitalize** ( )</code> [</>](./source/String.js#L4)
 
 Calling this function on a string will _Capitalise_ it.
 ```js
@@ -92,7 +92,7 @@ Calling this function on a string will _Capitalise_ it.
 // > Wolfgang Amadeus Mozart
 ```
 ---
-<a name="string_decapitalise" href="#string_decapitalise">#️⃣</a><code>_String_.**decapitalise** ( )</code> / <code>_String_.**decapitalize** ( )</code> [</>](./source/String.js#L8)
+<a name="string_decapitalise" href="#string_decapitalise">#️⃣</a> <code>_String_.**decapitalise** ( )</code> / <code>_String_.**decapitalize** ( )</code> [</>](./source/String.js#L8)
 
 Calling this function on a string will _decapitalise_ it.
 ```js
@@ -102,7 +102,7 @@ Calling this function on a string will _decapitalise_ it.
 // > wolfgang amadeus mozart
 ```
 ---
-<a name="string_camelcasify" href="#string_camelcasify">#️⃣</a><code>_String_.**camelcasify** ( )</code> / <code>_String_.**camelCasify** ( )</code> [</>](./source/String.js#L12)
+<a name="string_camelcasify" href="#string_camelcasify">#️⃣</a> <code>_String_.**camelcasify** ( )</code> / <code>_String_.**camelCasify** ( )</code> [</>](./source/String.js#L12)
 
 Calling this function on a string will _camelCasify_ it.
 ```js
@@ -116,7 +116,7 @@ Calling this function on a string will _camelCasify_ it.
 // > "myNameIsJeff"
 ```
 ---
-<a name="string_first" href="#string_first">#️⃣</a><code>_String_.**first** ( <span>number</span><span>:</span> _count_ = <span>1</span> )</code> [</>](./source/String.js#L17)
+<a name="string_first" href="#string_first">#️⃣</a> <code>_String_.**first** ( <span>number</span><span>:</span> _count_ = <span>1</span> )</code> [</>](./source/String.js#L17)
 
 Gets the first _count_ characters from a string. _Count_ defaults to one.
 ```js
@@ -128,7 +128,7 @@ Gets the first _count_ characters from a string. _Count_ defaults to one.
 // Woah... 😲
 ```
 ---
-<a name="string_last" href="#string_last">#️⃣</a><code>_String_.**last** ( <span>number</span><span>:</span> _count_ = <span>1</span> )</code> [</>](./source/String.js#L21)
+<a name="string_last" href="#string_last">#️⃣</a> <code>_String_.**last** ( <span>number</span><span>:</span> _count_ = <span>1</span> )</code> [</>](./source/String.js#L21)
 
 Gets the last _count_ characters from a string. _Count_ defaults to one.
 ```js
@@ -139,19 +139,19 @@ Gets the last _count_ characters from a string. _Count_ defaults to one.
 // > "rld"
 ```
 ---
-<a name="string_pad" href="#string_pad">#️⃣</a><code>_String_.**pad** ( <span>number</span><span>:</span> _count_ = <span>1</span> [, <span>string</span><span>:</span> _padding_ = <span>" "</span> ])</code> [</>](./source/String.js#L25)
+<a name="string_pad" href="#string_pad">#️⃣</a> <code>_String_.**pad** ( <span>number</span><span>:</span> _count_ = <span>1</span> [, <span>string</span><span>:</span> _padding_ = <span>" "</span> ])</code> [</>](./source/String.js#L25)
 
 Pads a string on both sides with a given _padding_ repeated _count_ times.
 When calling the function without a specified _padding_, it will be padded with <span>" "</span> (U+0020 'SPACE').
 
 ---
-<a name="string_padLeft" href="#string_padLeft">#️⃣</a><code>_String_.**padLeft** ( <span>number</span><span>:</span> _count_ = <span>1</span> [, <span>string</span><span>:</span> _padding_ = <span>" "</span> ])</code> [</>](./source/String.js#L37)
+<a name="string_padLeft" href="#string_padLeft">#️⃣</a> <code>_String_.**padLeft** ( <span>number</span><span>:</span> _count_ = <span>1</span> [, <span>string</span><span>:</span> _padding_ = <span>" "</span> ])</code> [</>](./source/String.js#L37)
 >**DEPRECATED:** _use JavaScript's builtin String.padStart instead_.
 ---
-<a name="string_padRight" href="#string_padRight">#️⃣</a><code>_String_.**padRight** ( <span>number</span><span>:</span> _count_ = <span>1</span> [, <span>string</span><span>:</span> _padding_ = <span>" "</span> ])</code> [</>](./source/String.js#L48)
+<a name="string_padRight" href="#string_padRight">#️⃣</a> <code>_String_.**padRight** ( <span>number</span><span>:</span> _count_ = <span>1</span> [, <span>string</span><span>:</span> _padding_ = <span>" "</span> ])</code> [</>](./source/String.js#L48)
 >**DEPRECATED:** _use JavaScript's builtin String.padEnd instead_.
 ---
-<a name="string_reverse" href="#string_reverse">#️⃣</a><code>_String_.**reverse** ( )</code> [</>](./source/String.js#L59)
+<a name="string_reverse" href="#string_reverse">#️⃣</a> <code>_String_.**reverse** ( )</code> [</>](./source/String.js#L59)
 
 Reverses a string.
 ```js
@@ -159,7 +159,7 @@ Reverses a string.
 // > "!gnirts elbisreveR"
 ```
 ---
-<a name="string_letters" href="#string_letters">#️⃣</a><code>_String_.**letters** ( )</code> [</>](./source/String.js#L63)
+<a name="string_letters" href="#string_letters">#️⃣</a> <code>_String_.**letters** ( )</code> [</>](./source/String.js#L63)
 
 Returns an array filled with all letters in a string.
 ```js
@@ -167,7 +167,7 @@ Returns an array filled with all letters in a string.
 // > ["S", "t", "r", "i", "n", "g", "t", "h", "a", "t", "c", "o", "n", "t", "a", "i", "n", "s", "l", "e", "t", "t", "e", "r", "s"]
 ```
 ---
-<a name="string_punctuationMarks" href="#string_punctuationMarks">#️⃣</a><code>_String_.**punctuationMarks** ( )</code> [</>](./source/String.js#L67)
+<a name="string_punctuationMarks" href="#string_punctuationMarks">#️⃣</a> <code>_String_.**punctuationMarks** ( )</code> [</>](./source/String.js#L67)
 
 Returns an array filled with all punctuation marks in a string.
 ```js
@@ -175,7 +175,7 @@ Returns an array filled with all punctuation marks in a string.
 // > [",", """, "'", "'", """, "-", "-", "."]
 ```
 ---
-<a name="string_escape" href="#string_escape">#️⃣</a><code>_String_.**escape** ( )</code> [</>](./source/String.js#L71)
+<a name="string_escape" href="#string_escape">#️⃣</a> <code>_String_.**escape** ( )</code> [</>](./source/String.js#L71)
 
 Escapes all non-word characters as defined by JavaScript's _RegExp_ engine.
 
@@ -184,7 +184,7 @@ Escapes all non-word characters as defined by JavaScript's _RegExp_ engine.
 // > "Hello\,\ my\ name\ is\ \"Barg\'um\ G\'act\"\ \-\-\ and\ I\ speak\ Klingon\."
 ```
 ---
-<a name="string_characters" href="#string_characters">#️⃣</a><code>_String_.**characters** ( <span>boolean</span><span>:</span> _ignoreWhiteSpace_ = <span>false</span> )</code> [</>](./source/String.js#L75)
+<a name="string_characters" href="#string_characters">#️⃣</a> <code>_String_.**characters** ( <span>boolean</span><span>:</span> _ignoreWhiteSpace_ = <span>false</span> )</code> [</>](./source/String.js#L75)
 
 Returns an array filled with all characters in a string. `ignoreWhiteSpace` is a boolean that, when true, will also include whitespace.
 ```js
@@ -195,7 +195,7 @@ Returns an array filled with all characters in a string. `ignoreWhiteSpace` is a
 // > ["H", "e", "l", "l", "o", ",", " ", "m", "y", " ", "n", "a", "m", "e", " ", "i", "s", " ", """, "B", "a", "r", "g", "'", "u", "m", " ", "G", "'", "a", "c", "t", """, " ", "-", "-", " ", "a", "n", "d", " ", "I", " ", "s", "p", "e", "a", "k", " ", "K", "l", "i", "n", "g", "o", "n", "."]
 ```
 ---
-<a name="string_truncate" href="#string_truncate">#️⃣</a><code>_String_.**truncate** ( <span>number</span><span>:</span> _length_, <span>string</span><span>:</span> _symbol_ = <span>"..."</span>)</code> [</>](./source/String.js#L79)
+<a name="string_truncate" href="#string_truncate">#️⃣</a> <code>_String_.**truncate** ( <span>number</span><span>:</span> _length_, <span>string</span><span>:</span> _symbol_ = <span>"..."</span>)</code> [</>](./source/String.js#L79)
 
 Truncates a string to a certain _length_, appending _symbol_ to it.
 ```js
@@ -203,7 +203,7 @@ Truncates a string to a certain _length_, appending _symbol_ to it.
 // > "This is a..."
 ```
 ---
-<a name="string_words" href="#string_words">#️⃣</a><code>_String_.**words** ( <span>boolean</span><span>:</span> _includeSpecialCharacters_ = <span>false</span> )</code> [</>](./source/String.js#L83)
+<a name="string_words" href="#string_words">#️⃣</a> <code>_String_.**words** ( <span>boolean</span><span>:</span> _includeSpecialCharacters_ = <span>false</span> )</code> [</>](./source/String.js#L83)
 
 Returns an array filled with the words in a string. Setting `includeSpecialCharacters` to true should be a bit more useful for strings with a lot of diacritic marks (e.g. French sentences), but doesn't work that well.
 ```js
@@ -211,12 +211,12 @@ Returns an array filled with the words in a string. Setting `includeSpecialChara
 // > ["Neque", "porro", "quisquam", "est", "qui", "dolorem", "ipsum", "quia", "dolor", "sit", "amet", "consectetur", "adipisci", "velit"]
 ```
 ---
-<a name="string_wordCount" href="#string_wordCount">#️⃣</a><code>_String_.**wordCount** ( )</code> [</>](./source/String.js#L87)
+<a name="string_wordCount" href="#string_wordCount">#️⃣</a> <code>_String_.**wordCount** ( )</code> [</>](./source/String.js#L87)
 
 Returns the amount of words found by the [_String_.**words**()](#string_words) function.
 
 ---
-<a name="string_hyphenate" href="#string_hyphenate">#️⃣</a><code>_String_.**hyphenate** ( )</code> [</>](./source/String.js#L91)
+<a name="string_hyphenate" href="#string_hyphenate">#️⃣</a> <code>_String_.**hyphenate** ( )</code> [</>](./source/String.js#L91)
 
 Replaces all word breaks by hyphens.
 ```js
@@ -224,7 +224,7 @@ Replaces all word breaks by hyphens.
 // > "Neque-porro-quisquam-est-qui-dolorem-ipsum-quia-dolor-sit-amet-consectetur-adipisci-velit"
 ```
 ---
-<a name="string_inflect" href="#string_inflect">#️⃣</a><code>_String_.**inflect** ( <span>number</span><span>:</span> _count_ )</code> [</>](./source/String.js#L95)
+<a name="string_inflect" href="#string_inflect">#️⃣</a> <code>_String_.**inflect** ( <span>number</span><span>:</span> _count_ )</code> [</>](./source/String.js#L95)
 
 Inflect the string to the correct count of things it describes. That's quite vague, so heres an example:
 ```js
@@ -241,60 +241,139 @@ dogs.push("Barry the Dog"); // dogs.length === 2
 // > "2 Dogs"
 ```
 
+#### Builtin Aliases
+- <code>_String_.**toLowerCase**</code> -> <code>_String_.**toLower**</code> -> <code>_String_.**lower**</code>
+- <code>_String_.**toUpperCase**</code> -> <code>_String_.**toUpper**</code> -> <code>_String_.**upper**</code>
+
 ### Array
-<a name="array_average" href="#array_average">#️⃣</a><code>_Array_.**average** ( )</code> [</>](sourcefile)
+<a name="array_average" href="#array_average">#️⃣</a> <code>_Array_.**average** ( )</code> / <code>_Array_.**avg** ( )</code> [</>](./source/Array.js#L8)
 
-Description
-
----
-<a name="array_pluck" href="#array_pluck">#️⃣</a><code>_Array_.**pluck** ( )</code> [</>](sourcefile)
-
-Description
-
----
-<a name="array_reject" href="#array_reject">#️⃣</a><code>_Array_.**reject** ( )</code> [</>](sourcefile)
-
-Description
+Gets the average value from an array. Handles non-numerical values through [the `toNumber` function](./source/Array.js#L3) from this library.
+```js
+[1, 2, 3, 4].average();
+// > 2.5
+```
+I should probably filter non-numerical or incoercible values, but that's future stuff.
 
 ---
-<a name="array_max" href="#array_max">#️⃣</a><code>_Array_.**max** ( )</code> [</>](sourcefile)
+<a name="array_pluck" href="#array_pluck">#️⃣</a> <code>_Array_.**pluck** ( <span>any</span><span>:</span> _value_ )</code> [</>](./source/Array.js#L12)
 
-Description
-
----
-<a name="array_min" href="#array_min">#️⃣</a><code>_Array_.**min** ( )</code> [</>](sourcefile)
-
-Description
-
----
-<a name="array_first" href="#array_first">#️⃣</a><code>_Array_.**first** ( )</code> [</>](sourcefile)
-
-Description
-
----
-<a name="array_last" href="#array_last">#️⃣</a><code>_Array_.**last** ( )</code> [</>](sourcefile)
-
-Description
+_"Plucks"_ any of _value_ out of the array this function is called on. works a bit like [Underscore.js Pluck](https://underscorejs.org/#pluck), but does more :)
+```js
+[
+  "test",
+  {test: 10},
+  {test: "idk", otherIndex: 1337},
+  false,
+  null,
+  "other value"
+].pluck("test");
+//> ["test", {test: 10}, {test: "idk", otherIndex: 1337}]
+```
+Currently only supports _values_ with types `string`, `number` or `function`. Objects will be added later, adding some sort of weird mix between same-key filtering and [MongoDB-like querying](https://docs.mongodb.com/manual/reference/operator/query/).
 
 ---
-<a name="array_clone" href="#array_clone">#️⃣</a><code>_Array_.**clone** ( )</code> [</>](sourcefile)
+<a name="array_reject" href="#array_reject">#️⃣</a> <code>_Array_.**reject** ( <span>any</span><span>:</span> _value_ )</code> / <code>_Array_.**without** ( <span>any</span><span>:</span> _value_ )</code> [</>](./source/Array.js#L27)
 
-Description
+[_"Plucks"_](#array_pluck) all of _value_ and filters those items out of the array this function is called on, therefore _rejects_ all of those values out of the source array.
+```js
+[
+  "test",
+  {test: 10},
+  {test: "idk", otherIndex: 1337},
+  false,
+  null,
+  "other value"
+].reject("test");
+//> [false, null, "other value"]
+```
 
 ---
-<a name="array_remove" href="#array_remove">#️⃣</a><code>_Array_.**remove** ( )</code> [</>](sourcefile)
+<a name="array_max" href="#array_max">#️⃣</a> <code>_Array_.**max** ( )</code> [</>](./source/Array.js#L32)
 
-Description
+Gets the largest value from an array. Handles non-numerical values the same way [_Array_.**average**()](#array_average) does.
+```js
+[1, 2, 3, 4].max();
+//> 4
+```
 
 ---
-<a name="array_clear" href="#array_clear">#️⃣</a><code>_Array_.**clear** ( )</code> [</>](sourcefile)
+<a name="array_min" href="#array_min">#️⃣</a> <code>_Array_.**min** ( )</code> [</>](./source/Array.js#L36)
 
-Description
+Gets the smallest value from an array. Handles non-numerical values the same way [_Array_.**average**()](#array_average) does.
+```js
+[1, 2, 3, 4].min();
+//> 1
+```
 
 ---
-<a name="array_grab" href="#array_grab">#️⃣</a><code>_Array_.**grab** ( )</code> [</>](sourcefile)
+<a name="array_first" href="#array_first">#️⃣</a> <code>_Array_.**first** ( <span>number</span><span>:</span> _count_ = <span>1</span> )</code> [</>](./source/Array.js#L40)
 
-Description
+Gets the first _count_ items from an array. _Count_ defaults to `1`.
+> Why not just use `array[0]`?
+
+Yes, that's shorter, but not the purpose of _Array_.**first**(). It gets the first _count_ items, and just happens to default to 1 item.
+```js
+["Hello", "World", "!"].first();
+// > ["Hello"]
+
+["Hello", "World", "!"].first(2);
+// > ["Hello", "World"]
+```
+
+---
+<a name="array_last" href="#array_last">#️⃣</a> <code>_Array_.**last** ( <span>number</span><span>:</span> _count_ = <span>1</span> )</code> [</>](./source/Array.js#L44)
+
+Gets the last _count_ items from an array. _Count_ defaults to `1`.
+```js
+["Hello", "World", "!"].last();
+// > ["!"]
+
+["Hello", "World", "!"].last(2);
+// > ["World", "!"]
+```
+
+---
+<a name="array_clone" href="#array_clone">#️⃣</a> <code>_Array_.**clone** ( )</code> / <code>_Array_.**copy** ( )</code> [</>](./source/Array.js#L48)
+
+Clones an array.
+```js
+[1, 2, 3].clone();
+// > [1, 2, 3]
+```
+
+---
+<a name="array_remove" href="#array_remove">#️⃣</a> <code>_Array_.**remove** ( <span>number</span><span>:</span> _from_ [, <span>number</span><span>:</span> _to_ ] )</code> [</>](./source/Array.js#L52)
+> **Mutates** the array it's called on.
+
+Splice all items starting at _from_, ending at _to_, returning the original array with those indexes removed.
+```js
+[6, 0, 5, 9].remove(2, 3);
+// > [6, 9]
+```
+
+---
+<a name="array_clear" href="#array_clear">#️⃣</a> <code>_Array_.**clear** ( )</code> [</>](./source/Array.js#L57)
+> **Mutates** the array it's called on.
+
+Clears an array.
+```js
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].clear();
+// > []
+```
+
+---
+<a name="array_grab" href="#array_grab">#️⃣</a> <code>_Array_.**grab** ( <span>number</span><span>:</span> _from_ [, <span>number</span><span>:</span> _to_ ])</code> [</>](./source/Array.js#L62)
+> **Mutates** the array it's called on.
+
+Splices items starting at `from`, and ending at `to`, giving back a single value, or an array of values (depending on if you grabbed multiple elements).
+```js
+["Hello", "Amazing", "World", "!"].grab(1, 2);
+// > ["Amazing", "World"]
+
+["Hello", "World", "!"].grab(1);
+// > "World"
+```
 
 ---
 ## Future
