@@ -386,12 +386,24 @@ Splices items starting at `from`, and ending at `to`, giving back a single value
 // > "World"
 ```
 
+---
 <a name="array_deduplicate" href="#array_deduplicate">#️⃣</a> <code>_Array_.**deduplicate** ( )</code> / <code>_Array_.**dedup** ( )</code> [</>](./source/Array.js#L67-L69)
 
 Returns a duplicate-free copy of (e.g. _deduplicates_) the array it is called on.
 ```js
 [1, 1, 1, 2, 3, 4, 4, 4, 5, 5, 6].deduplicate();
 // > [1, 2, 3, 4, 5, 6]
+```
+
+---
+<a name="array_mapAsync" href="#array_mapAsync">#️⃣</a> <code>_Array_.**mapAsync** ( <span>function</span><span>:</span> _callback_ )</code> [</>](./source/Array.js#L71-L73)
+
+Maps an array, supporting asynchronous mapping functions. Also works with synchronous ones, although you shouldn't use _Array_.**mapAsync** for that.
+```js
+[1, 2, 3, 4].mapAsync(number => {
+  return Promise.resolve(number * 2);
+});
+// > Promise {<resolved>: [2, 4, 6, 8]}
 ```
 
 ---

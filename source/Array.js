@@ -68,6 +68,10 @@ extendPrototype(Array, function deduplicate () {
 	return [...new Set(this)];
 });
 
+extendPrototype(Array, function mapAsync (callback) {
+	return Promise.all(this.map(callback));
+});
+
 import alias from "./Alias.js";
 console.groupCollapsed("Aliasing Array methods...");
 alias(Array, "average",     "avg",     false);
