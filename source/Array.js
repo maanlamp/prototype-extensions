@@ -75,7 +75,7 @@ extendPrototype(Array, function mapAsync (callback) {
 extendPrototype(Array, function filterAsync (predicate) {
 	const toFilter = Symbol();
 	return this.mapAsync(async item => (await predicate(item) && item) || toFilter).then(results => {
-		return results.filter(item => item !== toFilter)
+		return results.filter(item => item !== toFilter);
 	});
 });
 
