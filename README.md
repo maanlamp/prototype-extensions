@@ -241,9 +241,20 @@ dogs.push("Barry the Dog"); // dogs.length === 2
 // > "2 Dogs"
 ```
 
+<a name="string_startWith" href="#string_startWith">#️⃣</a> <code>_String_.**startWith** ( <span>pattern</span><span>:</span> _string_ )</code> [</>](./source/String.js#L99-L101)
+
+Checks if a string starts with _pattern_.
+```js
+"Hello World!".startsWith("Hello")
+// > true
+
+"Hello World!".startsWith("hello")
+// > false
+```
+
 #### Builtin Aliases
-- <code>_String_.**toLowerCase**</code> -> <code>_String_.**toLower**</code> -> <code>_String_.**lower**</code> [</>](./source/String.js#L104-L105)
-- <code>_String_.**toUpperCase**</code> -> <code>_String_.**toUpper**</code> -> <code>_String_.**upper**</code> [</>](./source/String.js#L164-L107)
+- <code>_String_.**toLowerCase**</code> -> <code>_String_.**toLower**</code> -> <code>_String_.**lower**</code> [</>](./source/String.js#L108-L109)
+- <code>_String_.**toUpperCase**</code> -> <code>_String_.**toUpper**</code> -> <code>_String_.**upper**</code> [</>](./source/String.js#L110-L111)
 
 ### Array
 <a name="array_average" href="#array_average">#️⃣</a> <code>_Array_.**average** ( )</code> / <code>_Array_.**avg** ( )</code> [</>](./source/Array.js#L8-L10)

@@ -96,6 +96,10 @@ extendPrototype(String, function inflect (count) { //Declension? Get grammatical
 	return (count !== 1) ? `${this}s` : this;
 });
 
+extendPrototype(String, function startsWith (pattern) {
+	return this.first(pattern.length) === pattern;
+});
+
 import alias from "./Alias.js";
 console.groupCollapsed("Aliasing String methods...");
 alias(String, "capitalise",   "capitalize",   false);
