@@ -72,6 +72,13 @@ extendPrototype(Array, function mapAsync (callback) {
 	return Promise.all(this.map(callback));
 });
 
+extendPrototype(Array, function filterAsync (predicate) {
+	const toFilter = Symbol();
+	return this.mapAsync(async item => (await predicate(item) && item) || toFilter).then(results => {
+		return results.filter(item => item !== toFilter)
+	});
+});
+
 import alias from "./Alias.js";
 console.groupCollapsed("Aliasing Array methods...");
 alias(Array, "average",     "avg",     false);

@@ -407,6 +407,17 @@ Maps an array, supporting asynchronous mapping functions. Also works with synchr
 ```
 
 ---
+<a name="array_filterAsync" href="#array_filterAsync">#️⃣</a> <code>_Array_.**filterAsync** ( <span>function</span><span>:</span> _predicate_ )</code> [</>](./source/Array.js#L75-L78)
+
+Filters an array, supporting asynchronous filtering functions. Also works with synchronous ones, although you shouldn't use _Array_.**filterAsync** for that.
+```js
+[1, 2, 3, 4].filterAsync(number => {
+  return Promise.resolve(![2, 3].includes(number));
+});
+// > Promise {<resolved>: [1, 4]}
+```
+
+---
 ## Future
 If you want me to add any extensions, just ask. If you want to contribute, just make a PR. If you think this is a nice library, give it a star (and consider following me).
 
