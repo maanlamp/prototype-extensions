@@ -84,5 +84,5 @@ console.groupCollapsed("Aliasing Array methods...");
 alias(Array, "average",     "avg",     false);
 alias(Array, "reject",      "without", false);
 alias(Array, "clone",       "copy",    false);
-alias(Array, "deduplicate", "dedup",    false);
+alias(Array, "deduplicate", "dedup",   false);
 console.groupEnd();
