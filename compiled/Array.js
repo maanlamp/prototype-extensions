@@ -12,6 +12,8 @@ var _Alias2 = _interopRequireDefault(_Alias);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function toNumber(value) {
 	var num = Number(value);
 	return !isNaN(num) && num || 0;
@@ -92,8 +94,28 @@ function toNumber(value) {
 	return grabbed.length === 1 ? grabbed[0] : grabbed;
 });
 
+(0, _Extend2.default)(Array, function deduplicate() {
+	return [].concat(_toConsumableArray(new Set(this)));
+});
+
+(0, _Extend2.default)(Array, function mapAsync(callback) {
+	return Promise.all(this.map(callback));
+});
+
+(0, _Extend2.default)(Array, function filterAsync(predicate) {
+	var toFilter = Symbol();
+	return this.mapAsync(async function (item) {
+		return (await predicate(item)) && item || toFilter;
+	}).then(function (results) {
+		return results.filter(function (item) {
+			return item !== toFilter;
+		});
+	});
+});
+
 console.groupCollapsed("Aliasing Array methods...");
 (0, _Alias2.default)(Array, "average", "avg", false);
 (0, _Alias2.default)(Array, "reject", "without", false);
 (0, _Alias2.default)(Array, "clone", "copy", false);
+(0, _Alias2.default)(Array, "deduplicate", "dedup", false);
 console.groupEnd();

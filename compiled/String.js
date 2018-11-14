@@ -127,6 +127,10 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 	return count !== 1 ? this + "s" : this;
 });
 
+(0, _Extend2.default)(String, function startsWith(pattern) {
+	return this.first(pattern.length) === pattern;
+});
+
 console.groupCollapsed("Aliasing String methods...");
 (0, _Alias2.default)(String, "capitalise", "capitalize", false);
 (0, _Alias2.default)(String, "decapitalise", "decapitalize", false);
