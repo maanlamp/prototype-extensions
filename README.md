@@ -375,6 +375,14 @@ Splices items starting at `from`, and ending at `to`, giving back a single value
 // > "World"
 ```
 
+<a name="array_deduplicate" href="#array_deduplicate">#️⃣</a> <code>_Array_.**deduplicate** ( )</code> / <code>_Array_.**dedup** ( )</code> [</>](./source/Array.js#L67-L69)
+
+Returns a duplicate-free copy of (e.g. _deduplicates_) the array it is called on.
+```js
+[1, 1, 1, 2, 3, 4, 4, 4, 5, 5, 6].deduplicate();
+// > [1, 2, 3, 4, 5, 6]
+```
+
 ---
 ## Future
 If you want me to add any extensions, just ask. If you want to contribute, just make a PR. If you think this is a nice library, give it a star (and consider following me).
