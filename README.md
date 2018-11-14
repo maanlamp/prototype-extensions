@@ -407,7 +407,7 @@ Maps an array, supporting asynchronous mapping functions. Also works with synchr
 ```
 
 ---
-<a name="array_filterAsync" href="#array_filterAsync">#️⃣</a> <code>_Array_.**filterAsync** ( <span>function</span><span>:</span> _predicate_ )</code> [</>](./source/Array.js#L75-L78)
+<a name="array_filterAsync" href="#array_filterAsync">#️⃣</a> <code>_Array_.**filterAsync** ( <span>function</span><span>:</span> _predicate_ )</code> [</>](./source/Array.js#L75-L80)
 
 Filters an array, supporting asynchronous filtering functions. Also works with synchronous ones, although you shouldn't use _Array_.**filterAsync** for that.
 ```js
