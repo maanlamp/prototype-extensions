@@ -1,28 +1,25 @@
 <!--
 When github starts supporting CSS, enable this :(
-
 <style>
-  code>em+strong~em+span+span /*type*/ {
-    text-decoration: underline;
-  }
-
   code>em:first-of-type /*prototype*/ {
     color: #0089B3;
   } code>em+strong /*method*/,
-    code>em+strong~em+span+span /*type*/ {
+    code>.type {
     color: #679C00;
-  } code>em+strong~em /*arguments*/ {
+  } code>.type {
+    text-decoration: underline;
+  } code>.type+em /*argument*/ {
     color: #CF7000;
-  } code>em+strong~em+span+span+span /*literal*/ {
+  } code>.literal {
     color: #684D99;
     background-color: rgba(104, 77, 153, .1);
     border-radius: 2px;
-  } code>em+strong~em+span /*operator*/ {
+  } code>.operator {
     color: #F9005A;
   }
 </style>
+<a name="example_method" href="#example_method">#️⃣</a> <code>_ExamplePrototype_.**methodName** ( <span class="type">type:</span> _argument_ = <span class="literal">default</span> [, <span class="type">type:</span> _optionalArgument_])</code> [</>](#example_method)
 -->
-
 # prototype-extensions
 My personal prototype extension library. Feel free to use it in your own projects :).
 
@@ -418,7 +415,7 @@ Filters an array, supporting asynchronous filtering functions. Also works with s
 ```
 
 ---
-<a name="array_chunkify" href="#array_chunkify">#️⃣</a> <code>_Array_.**chunkify** ( <span>number</span><span>:</span> _chunkSize_ = <span>1</span>)</code> [</>](./source/Array.js#L67-L73)
+<a name="array_chunkify" href="#array_chunkify">#️⃣</a> <code>_Array_.**chunkify** ( <span>number</span><span>:</span> _chunkSize_ = <span>1</span>)</code> [</>](./source/Array.js#L82-L88)
 
 Returns a new array filled with chunks of the original array. These chunks will be at most _chunkSize_ items long. If the last few items in an array are not of length _chunkSize_ then they will be chunked as-is.
 
