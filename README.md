@@ -376,6 +376,18 @@ Splices items starting at `from`, and ending at `to`, giving back a single value
 ```
 
 ---
+<a name="array_chunkify" href="#array_chunkify">#️⃣</a> <code>_Array_.**chunkify** ( <span>number</span><span>:</span> _chunkSize_ = <span>1</span>)</code> [</>](./source/Array.js#L67-L73)
+
+Returns a new array filled with chunks of the original array. These chunks will be at most _chunkSize_ items long. If the last few items in an array are not of length _chunkSize_ then they will be chunked as-is.
+```js
+["Hello", "Amazing", "World", "!"].chunkify(2);
+// > [["Hello", "Amazing"], ["World", "!"]]
+
+["Hello", "World", "!"].chunkify(2);
+// > [["hello", "World"], ["!"]]
+```
+
+---
 ## Future
 If you want me to add any extensions, just ask. If you want to contribute, just make a PR. If you think this is a nice library, give it a star (and consider following me).
 
