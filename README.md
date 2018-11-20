@@ -241,9 +241,20 @@ dogs.push("Barry the Dog"); // dogs.length === 2
 // > "2 Dogs"
 ```
 
+<a name="string_startWith" href="#string_startWith">#️⃣</a> <code>_String_.**startWith** ( <span>pattern</span><span>:</span> _string_ )</code> [</>](./source/String.js#L99-L101)
+
+Checks if a string starts with _pattern_.
+```js
+"Hello World!".startsWith("Hello")
+// > true
+
+"Hello World!".startsWith("hello")
+// > false
+```
+
 #### Builtin Aliases
-- <code>_String_.**toLowerCase**</code> -> <code>_String_.**toLower**</code> -> <code>_String_.**lower**</code> [</>](./source/String.js#L104-L105)
-- <code>_String_.**toUpperCase**</code> -> <code>_String_.**toUpper**</code> -> <code>_String_.**upper**</code> [</>](./source/String.js#L164-L107)
+- <code>_String_.**toLowerCase**</code> -> <code>_String_.**toLower**</code> -> <code>_String_.**lower**</code> [</>](./source/String.js#L108-L109)
+- <code>_String_.**toUpperCase**</code> -> <code>_String_.**toUpper**</code> -> <code>_String_.**upper**</code> [</>](./source/String.js#L110-L111)
 
 ### Array
 <a name="array_average" href="#array_average">#️⃣</a> <code>_Array_.**average** ( )</code> / <code>_Array_.**avg** ( )</code> [</>](./source/Array.js#L8-L10)
@@ -373,6 +384,37 @@ Splices items starting at `from`, and ending at `to`, giving back a single value
 
 ["Hello", "World", "!"].grab(1);
 // > "World"
+```
+
+---
+<a name="array_deduplicate" href="#array_deduplicate">#️⃣</a> <code>_Array_.**deduplicate** ( )</code> / <code>_Array_.**dedup** ( )</code> [</>](./source/Array.js#L67-L69)
+
+Returns a duplicate-free copy of (e.g. _deduplicates_) the array it is called on.
+```js
+[1, 1, 1, 2, 3, 4, 4, 4, 5, 5, 6].deduplicate();
+// > [1, 2, 3, 4, 5, 6]
+```
+
+---
+<a name="array_mapAsync" href="#array_mapAsync">#️⃣</a> <code>_Array_.**mapAsync** ( <span>function</span><span>:</span> _callback_ )</code> [</>](./source/Array.js#L71-L73)
+
+Maps an array, supporting asynchronous mapping functions. Also works with synchronous ones, although you shouldn't use _Array_.**mapAsync** for that.
+```js
+[1, 2, 3, 4].mapAsync(number => {
+  return Promise.resolve(number * 2);
+});
+// > Promise {<resolved>: [2, 4, 6, 8]}
+```
+
+---
+<a name="array_filterAsync" href="#array_filterAsync">#️⃣</a> <code>_Array_.**filterAsync** ( <span>function</span><span>:</span> _predicate_ )</code> [</>](./source/Array.js#L75-L80)
+
+Filters an array, supporting asynchronous filtering functions. Also works with synchronous ones, although you shouldn't use _Array_.**filterAsync** for that.
+```js
+[1, 2, 3, 4].filterAsync(number => {
+  return Promise.resolve(![2, 3].includes(number));
+});
+// > Promise {<resolved>: [1, 4]}
 ```
 
 ---

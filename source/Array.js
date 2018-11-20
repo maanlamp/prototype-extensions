@@ -64,9 +64,25 @@ extendPrototype(Array, function grab (start, end = start + 1) {
 	return (grabbed.length === 1) ? grabbed[0] : grabbed;
 });
 
+extendPrototype(Array, function deduplicate () {
+	return [...new Set(this)];
+});
+
+extendPrototype(Array, function mapAsync (callback) {
+	return Promise.all(this.map(callback));
+});
+
+extendPrototype(Array, function filterAsync (predicate) {
+	const toFilter = Symbol();
+	return this.mapAsync(async item => (await predicate(item) && item) || toFilter).then(results => {
+		return results.filter(item => item !== toFilter);
+	});
+});
+
 import alias from "./Alias.js";
 console.groupCollapsed("Aliasing Array methods...");
-alias(Array, "average", "avg",     false);
-alias(Array, "reject",  "without", false);
-alias(Array, "clone",   "copy",    false);
+alias(Array, "average",     "avg",     false);
+alias(Array, "reject",      "without", false);
+alias(Array, "clone",       "copy",    false);
+alias(Array, "deduplicate", "dedup",   false);
 console.groupEnd();
