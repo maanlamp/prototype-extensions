@@ -64,6 +64,7 @@ extendPrototype(Array, function grab (start, end = start + 1) {
 	return (grabbed.length === 1) ? grabbed[0] : grabbed;
 });
 
+<<<<<<< HEAD
 extendPrototype(Array, function deduplicate () {
 	return [...new Set(this)];
 });
@@ -77,6 +78,14 @@ extendPrototype(Array, function filterAsync (predicate) {
 	return this.mapAsync(async item => (await predicate(item) && item) || toFilter).then(results => {
 		return results.filter(item => item !== toFilter);
 	});
+=======
+extendPrototype(Array, function chunkify (chunkSize = 1) {
+	const returnArray = [];
+	for (let i = 0; i < this.length; i += chunkSize) {
+		returnArray.push(this.slice(i, i + chunkSize));
+	}
+	return returnArray;
+>>>>>>> parent of 10a05e2... Revert "Add [Array.chunkify]"
 });
 
 import alias from "./Alias.js";
