@@ -57,9 +57,9 @@ Simply make sure you don't overwrite existing prototype methods (including third
 How do I extend prototypes you ask? Well, like this:
 ```js
 export default function extendPrototype (object, method) {
-	Object.defineProperty(object.prototype || object, method.name, {
-		value: method
-	});
+  Object.defineProperty(object.prototype || object, method.name, {
+    value: method
+  });
 }
 ```
 This way I don't create enumerable properties that show up when you use builtin iterators.
