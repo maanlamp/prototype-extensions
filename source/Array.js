@@ -64,14 +64,6 @@ extendPrototype(Array, function grab (start, end = start + 1) {
 	return (grabbed.length === 1) ? grabbed[0] : grabbed;
 });
 
-extendPrototype(Array, function chunkify (chunkSize = 1) {
-	const returnArray = [];
-	for (let i = 0; i < this.length; i += chunkSize) {
-		returnArray.push(this.slice(i, i + chunkSize));
-	}
-	return returnArray;
-});
-
 import alias from "./Alias.js";
 console.groupCollapsed("Aliasing Array methods...");
 alias(Array, "average", "avg",     false);
