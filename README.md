@@ -387,7 +387,6 @@ Splices items starting at `from`, and ending at `to`, giving back a single value
 ```
 
 ---
-<<<<<<< HEAD
 <a name="array_deduplicate" href="#array_deduplicate">#️⃣</a> <code>_Array_.**deduplicate** ( )</code> / <code>_Array_.**dedup** ( )</code> [</>](./source/Array.js#L67-L69)
 
 Returns a duplicate-free copy of (e.g. _deduplicates_) the array it is called on.
@@ -416,17 +415,19 @@ Filters an array, supporting asynchronous filtering functions. Also works with s
   return Promise.resolve(![2, 3].includes(number));
 });
 // > Promise {<resolved>: [1, 4]}
-=======
+```
+
+---
 <a name="array_chunkify" href="#array_chunkify">#️⃣</a> <code>_Array_.**chunkify** ( <span>number</span><span>:</span> _chunkSize_ = <span>1</span>)</code> [</>](./source/Array.js#L67-L73)
 
 Returns a new array filled with chunks of the original array. These chunks will be at most _chunkSize_ items long. If the last few items in an array are not of length _chunkSize_ then they will be chunked as-is.
+
 ```js
 ["Hello", "Amazing", "World", "!"].chunkify(2);
 // > [["Hello", "Amazing"], ["World", "!"]]
 
 ["Hello", "World", "!"].chunkify(2);
 // > [["hello", "World"], ["!"]]
->>>>>>> parent of 10a05e2... Revert "Add [Array.chunkify]"
 ```
 
 ---
