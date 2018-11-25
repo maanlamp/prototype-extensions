@@ -100,6 +100,15 @@ extendPrototype(String, function startsWith (pattern) {
 	return this.first(pattern.length) === pattern;
 });
 
+extendPrototype(String, function dedent () {
+	const lines = this.split("\n");
+	const baseIndentation = lines.filter(line => line.length)[0].match(/^[\r\t\f\v ]+/)[0].length;
+	return lines
+		.join("\n")
+		.replace(new RegExp(`^[\\r\\t\\f\\v ]{1,${baseIndentation}}`, "gm"), "")
+		.replace(/^\s*\|<-/gm, "");
+});
+
 import alias from "./Alias.js";
 console.groupCollapsed("Aliasing String methods...");
 alias(String, "capitalise",   "capitalize",   false);

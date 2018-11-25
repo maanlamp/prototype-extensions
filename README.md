@@ -237,8 +237,8 @@ dogs.push("Barry the Dog"); // dogs.length === 2
 `${dogs.length} Dog`.inflect(dogs.length);
 // > "2 Dogs"
 ```
-
-<a name="string_startWith" href="#string_startWith">#️⃣</a> <code>_String_.**startWith** ( <span>pattern</span><span>:</span> _string_ )</code> [</>](./source/String.js#L99-L101)
+---
+<a name="string_startsWith" href="#string_startsWith">#️⃣</a> <code>_String_.**startsWith** ( <span>pattern</span><span>:</span> _string_ )</code> [</>](./source/String.js#L99-L101)
 
 Checks if a string starts with _pattern_.
 ```js
@@ -248,7 +248,29 @@ Checks if a string starts with _pattern_.
 "Hello World!".startsWith("hello")
 // > false
 ```
+---
+<a name="string_dedent" href="#string_dedent">#️⃣</a> <code>_String_.**dedent** (  )</code> [</>](./source/String.js#L103-L110)
 
+Removes indentation from a string. The special character class `|<-` removes all indentation untill that class, including the class itself.
+```js
+`
+            Unknown lexeme \`${lexeme}\` in FILENAME.EXTENSION
+              at line ${line}, column ${column}${(lexeme.length > 1) ? " to " + (column + lexeme.length - 1) : ""}.
+              
+              |<-${lineString}
+              |<-${" ".repeat(column - 1)}${"˜".repeat(lexeme.length)}
+`.dedent();
+/* >
+`
+Unknown lexeme \`${lexeme}\` in FILENAME.EXTENSION
+  at line ${line}, column ${column}${(lexeme.length > 1) ? " to " + (column + lexeme.length - 1) : ""}.
+  
+${lineString}
+${" ".repeat(column - 1)}${chalk.redBright("˜".repeat(lexeme.length))}
+`
+*/
+```
+---
 #### Builtin Aliases
 - <code>_String_.**toLowerCase**</code> -> <code>_String_.**toLower**</code> -> <code>_String_.**lower**</code> [</>](./source/String.js#L108-L109)
 - <code>_String_.**toUpperCase**</code> -> <code>_String_.**toUpper**</code> -> <code>_String_.**upper**</code> [</>](./source/String.js#L110-L111)
