@@ -113,6 +113,16 @@ function toNumber(value) {
 	});
 });
 
+(0, _Extend2.default)(Array, function chunkify() {
+	var chunkSize = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+
+	var returnArray = [];
+	for (var i = 0; i < this.length; i += chunkSize) {
+		returnArray.push(this.slice(i, i + chunkSize));
+	}
+	return returnArray;
+});
+
 console.groupCollapsed("Aliasing Array methods...");
 (0, _Alias2.default)(Array, "average", "avg", false);
 (0, _Alias2.default)(Array, "reject", "without", false);
