@@ -87,6 +87,23 @@ extendPrototype(Array, function chunkify (chunkSize = 1) {
 	return returnArray;
 });
 
+extendPrototype(Array, function split (separator, limit = this.length) {
+	//Implement limit somehow?
+	const chunks = [];
+	const splitHere = Symbol("Split here");
+	const raw = [splitHere, ...this.map(item => (typeof separator === "function" && separator(item) || separator === item) ? splitHere : item)];
+
+	for (const item of raw) {
+		if (item === splitHere) {
+			chunks.push([]);
+		} else {
+			chunks.last().push(item);
+		}
+	}
+
+	return chunks;
+});
+
 import alias from "./Alias.js";
 console.groupCollapsed("Aliasing Array methods...");
 alias(Array, "average",     "avg",     false);

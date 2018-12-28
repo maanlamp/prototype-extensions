@@ -123,6 +123,48 @@ function toNumber(value) {
 	return returnArray;
 });
 
+(0, _Extend2.default)(Array, function split(separator) {
+	var limit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.length;
+
+	//Implement limit somehow?
+	var chunks = [];
+	var splitHere = Symbol("Split here");
+	var raw = [splitHere].concat(_toConsumableArray(this.map(function (item) {
+		return typeof separator === "function" && separator(item) || separator === item ? splitHere : item;
+	})));
+
+	var _iteratorNormalCompletion = true;
+	var _didIteratorError = false;
+	var _iteratorError = undefined;
+
+	try {
+		for (var _iterator = raw[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+			var item = _step.value;
+
+			if (item === splitHere) {
+				chunks.push([]);
+			} else {
+				chunks.last().push(item);
+			}
+		}
+	} catch (err) {
+		_didIteratorError = true;
+		_iteratorError = err;
+	} finally {
+		try {
+			if (!_iteratorNormalCompletion && _iterator.return) {
+				_iterator.return();
+			}
+		} finally {
+			if (_didIteratorError) {
+				throw _iteratorError;
+			}
+		}
+	}
+
+	return chunks;
+});
+
 console.groupCollapsed("Aliasing Array methods...");
 (0, _Alias2.default)(Array, "average", "avg", false);
 (0, _Alias2.default)(Array, "reject", "without", false);

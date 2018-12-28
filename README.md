@@ -450,6 +450,17 @@ Returns a new array filled with chunks of the original array. These chunks will 
 ```
 
 ---
+<a name="array_split" href="#array_split">#️⃣</a> <code>_Array_.**split** ( <span>any</span><span>:</span> _separator_, <span>number</span><span>:</span> _limit_ )</code> [</>](./source/Array.js#L90-L105)
+
+Returns a new array split at _separator_ (exclusively). It's much like String.split, but it works on an array.
+>_Limit is not implemented... yet(?)_
+
+```js
+[1, 2, 3, 1, 1, 2, 3, 5, 67, 123, 1, 3].split(2);
+// > [[1], [3, 1, 1], [3, 5, 67, 123, 1, 3]]
+```
+
+---
 ## Future
 If you want me to add any extensions, just ask. If you want to contribute, just make a PR. If you think this is a nice library, give it a star (and consider following me).
 
