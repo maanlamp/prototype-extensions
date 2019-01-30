@@ -1,4 +1,4 @@
-export default function aliasPrototypeMethod (prototype, method, alias, log) {
+export default function aliasPrototypeMethod (prototype, method, alias, log = false) {
 	prototype = (prototype.prototype) ? prototype.prototype : prototype;
 	try {
 		Object.defineProperty(prototype, alias, {

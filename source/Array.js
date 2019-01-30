@@ -105,9 +105,7 @@ extendPrototype(Array, function split (separator, limit = this.length) {
 });
 
 import alias from "./Alias.js";
-console.groupCollapsed("Aliasing Array methods...");
 alias(Array, "average",     "avg",     false);
 alias(Array, "reject",      "without", false);
 alias(Array, "clone",       "copy",    false);
 alias(Array, "deduplicate", "dedup",   false);
-console.groupEnd();

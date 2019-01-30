@@ -110,7 +110,6 @@ extendPrototype(String, function dedent () {
 });
 
 import alias from "./Alias.js";
-console.groupCollapsed("Aliasing String methods...");
 alias(String, "capitalise",   "capitalize",   false);
 alias(String, "decapitalise", "decapitalize", false);
 alias(String, "camelcasify",  "camelCasify",  false);
@@ -118,6 +117,5 @@ alias(String, "toLowerCase",  "toLower",      false);
 alias(String, "toLowerCase",  "lower",        false);
 alias(String, "toUpperCase",  "toUpper",      false);
 alias(String, "toUpperCase",  "upper",        false);
-console.groupEnd();
 
 //titlecasify -> Title Case is Geweldig!
