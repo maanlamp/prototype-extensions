@@ -104,7 +104,13 @@ extendPrototype(Array, function split (separator, limit = this.length) {
 	return chunks;
 });
 
+extendPrototype(Array, function deduplicate () {
+	return [...new Set(this)];
+});
+
 import alias from "./Alias.js";
+alias(Array, "deduplicate", "dedup",   false);
+alias(Array, "deduplicate", "unique",  false);
 alias(Array, "average",     "avg",     false);
 alias(Array, "reject",      "without", false);
 alias(Array, "clone",       "copy",    false);
