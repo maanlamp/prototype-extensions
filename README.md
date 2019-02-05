@@ -461,7 +461,25 @@ Returns a new array split at _separator_ (exclusively). It's much like String.sp
 ```
 
 ---
+<a name="array_deduplicate" href="#array_deduplicate">#️⃣</a> <code>_Array_.**deduplicate** ( )</code> [</>](./source/Array.js#L107-L109)
+
+Removes all duplicate entries in an array.
+
+```js
+[1, 1, 2, 3].deduplicate();
+// > [1, 2, 3]
+```
+
+---
+<a name="array_merge" href="#array_merge">#️⃣</a> <code>_Array_.**merge** ( <span>any</span><span>:</span> ..._others_ )</code> [</>](./source/Array.js#L11-L114)
+
+Concatenates _others_ with the original array, mutating it. Returns the modified array.
+
+```js
+[1, 2, 3].merge(4, 5, 6, [7, 8, [9, 10]]);
+// > [1, 2, 3, 4, 5, 6, 7, 8, [9, 10]]
+```
+
+---
 ## Future
 If you want me to add any extensions, just ask. If you want to contribute, just make a PR. If you think this is a nice library, give it a star (and consider following me).
-
-No concrete plans for extending the library as of yet (12/11/2018), but who knows...

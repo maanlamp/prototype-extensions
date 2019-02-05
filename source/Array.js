@@ -108,6 +108,11 @@ extendPrototype(Array, function deduplicate () {
 	return [...new Set(this)];
 });
 
+extendPrototype(Array, function merge (...others) {
+	this.push(...(others.flat()));
+	return this;
+});
+
 import alias from "./Alias.js";
 alias(Array, "deduplicate", "dedup",   false);
 alias(Array, "deduplicate", "unique",  false);
