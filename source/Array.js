@@ -104,10 +104,6 @@ extendPrototype(Array, function split (separator, limit = this.length) {
 	return chunks;
 });
 
-extendPrototype(Array, function deduplicate () {
-	return [...new Set(this)];
-});
-
 extendPrototype(Array, function merge (...others) {
 	this.push(...(others.flat()));
 	return this;

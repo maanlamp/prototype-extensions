@@ -461,17 +461,7 @@ Returns a new array split at _separator_ (exclusively). It's much like String.sp
 ```
 
 ---
-<a name="array_deduplicate" href="#array_deduplicate">#️⃣</a> <code>_Array_.**deduplicate** ( )</code> [</>](./source/Array.js#L107-L109)
-
-Removes all duplicate entries in an array.
-
-```js
-[1, 1, 2, 3].deduplicate();
-// > [1, 2, 3]
-```
-
----
-<a name="array_merge" href="#array_merge">#️⃣</a> <code>_Array_.**merge** ( <span>any</span><span>:</span> ..._others_ )</code> [</>](./source/Array.js#L11-L114)
+<a name="array_merge" href="#array_merge">#️⃣</a> <code>_Array_.**merge** ( <span>any</span><span>:</span> ..._others_ )</code> [</>](./source/Array.js#L107-L110)
 
 Concatenates _others_ with the original array, mutating it. Returns the modified array.
 
