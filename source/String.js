@@ -101,12 +101,11 @@ extendPrototype(String, function startsWith (pattern) {
 });
 
 extendPrototype(String, function dedent () {
-	const lines = this.split("\n");
-	const baseIndentation = lines.filter(line => line.length)[0].match(/^[\r\t\f\v ]+/)[0].length;
-	return lines
-		.join("\n")
-		.replace(new RegExp(`^[\\r\\t\\f\\v ]{1,${baseIndentation}}`, "gm"), "")
-		.replace(/^\s*\|<-/gm, "");
+	const indentation = this
+		.substring(this.indexOf("\n") + 1)
+		.substring(0, this.search(/\S/) - 1);
+
+	return this.replace(new RegExp(`^${indentation}`, "gm"), "");
 });
 
 import alias from "./Alias.js";
