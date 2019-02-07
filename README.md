@@ -249,7 +249,7 @@ Checks if a string starts with _pattern_.
 // > false
 ```
 ---
-<a name="string_dedent" href="#string_dedent">#️⃣</a> <code>_String_.**dedent** (  )</code> [</>](./source/String.js#L103-L110)
+<a name="string_dedent" href="#string_dedent">#️⃣</a> <code>_String_.**dedent** (  )</code> [</>](./source/String.js#L103-L111)
 
 Removes indentation from a string. The special character class `|<-` removes all indentation untill that class, including the class itself.
 ```js

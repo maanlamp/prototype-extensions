@@ -105,7 +105,9 @@ extendPrototype(String, function dedent () {
 		.substring(this.indexOf("\n") + 1)
 		.substring(0, this.search(/\S/) - 1);
 
-	return this.replace(new RegExp(`^${indentation}`, "gm"), "");
+	return this
+		.replace(new RegExp(`^${indentation}`, "gm"), "")
+		.replace(/[\r\t\f\v ]*|<-/g, "");
 });
 
 import alias from "./Alias.js";
