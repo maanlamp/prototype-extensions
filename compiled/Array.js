@@ -165,9 +165,18 @@ function toNumber(value) {
 	return chunks;
 });
 
-console.groupCollapsed("Aliasing Array methods...");
+(0, _Extend2.default)(Array, function merge() {
+	for (var _len = arguments.length, others = Array(_len), _key = 0; _key < _len; _key++) {
+		others[_key] = arguments[_key];
+	}
+
+	this.push.apply(this, _toConsumableArray(others.flat()));
+	return this;
+});
+
+(0, _Alias2.default)(Array, "deduplicate", "dedup", false);
+(0, _Alias2.default)(Array, "deduplicate", "unique", false);
 (0, _Alias2.default)(Array, "average", "avg", false);
 (0, _Alias2.default)(Array, "reject", "without", false);
 (0, _Alias2.default)(Array, "clone", "copy", false);
 (0, _Alias2.default)(Array, "deduplicate", "dedup", false);
-console.groupEnd();

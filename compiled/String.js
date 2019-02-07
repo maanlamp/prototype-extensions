@@ -132,14 +132,11 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 });
 
 (0, _Extend2.default)(String, function dedent() {
-	var lines = this.split("\n");
-	var baseIndentation = lines.filter(function (line) {
-		return line.length;
-	})[0].match(/^[\r\t\f\v ]+/)[0].length;
-	return lines.join("\n").replace(new RegExp("^[\\r\\t\\f\\v ]{1," + baseIndentation + "}", "gm"), "").replace(/^\s*\|<-/gm, "");
+	var indentation = this.substring(this.indexOf("\n") + 1).substring(0, this.search(/\S/) - 1);
+
+	return this.replace(new RegExp("^" + indentation, "gm"), "").replace(/[\r\t\f\v ]*|<-/g, "");
 });
 
-console.groupCollapsed("Aliasing String methods...");
 (0, _Alias2.default)(String, "capitalise", "capitalize", false);
 (0, _Alias2.default)(String, "decapitalise", "decapitalize", false);
 (0, _Alias2.default)(String, "camelcasify", "camelCasify", false);
@@ -147,6 +144,5 @@ console.groupCollapsed("Aliasing String methods...");
 (0, _Alias2.default)(String, "toLowerCase", "lower", false);
 (0, _Alias2.default)(String, "toUpperCase", "toUpper", false);
 (0, _Alias2.default)(String, "toUpperCase", "upper", false);
-console.groupEnd();
 
 //titlecasify -> Title Case is Geweldig!
