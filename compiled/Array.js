@@ -19,6 +19,10 @@ function toNumber(value) {
 	return !isNaN(num) && num || 0;
 }
 
+function singleItemOrArray(array) {
+	return array.length === 1 ? array[0] : array;
+}
+
 (0, _Extend2.default)(Array, function average() {
 	return this.reduce(function (total, current) {
 		return total += toNumber(current);
@@ -62,13 +66,13 @@ function toNumber(value) {
 (0, _Extend2.default)(Array, function first() {
 	var count = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
 
-	return this.slice(0, count);
+	return singleItemOrArray(this.slice(0, count));
 });
 
 (0, _Extend2.default)(Array, function last() {
 	var count = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
 
-	return this[this.length - count];
+	return singleItemOrArray(this.slice(-count));
 });
 
 (0, _Extend2.default)(Array, function clone() {
@@ -90,8 +94,7 @@ function toNumber(value) {
 (0, _Extend2.default)(Array, function grab(start) {
 	var end = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : start + 1;
 
-	var grabbed = this.splice(start, end - start);
-	return grabbed.length === 1 ? grabbed[0] : grabbed;
+	return singleItemOrArray(this.splice(start, end - start));
 });
 
 (0, _Extend2.default)(Array, function deduplicate() {
@@ -174,7 +177,10 @@ function toNumber(value) {
 	return this;
 });
 
-(0, _Alias2.default)(Array, "deduplicate", "dedup", false);
+(0, _Extend2.default)(Array, function reversed() {
+	return this.clone().reverse();
+});
+
 (0, _Alias2.default)(Array, "deduplicate", "unique", false);
 (0, _Alias2.default)(Array, "average", "avg", false);
 (0, _Alias2.default)(Array, "reject", "without", false);

@@ -5,6 +5,12 @@ function toNumber(value) {
 	return (!isNaN(num) && num) || 0;
 }
 
+function singleItemOrArray (array) {
+	return (array.length === 1)
+		? array[0]
+		: array;
+}
+
 extendPrototype(Array, function average () {
 	return this.reduce((total, current) => total += toNumber(current)) / this.length;
 });
@@ -38,11 +44,11 @@ extendPrototype(Array, function min () {
 });
 
 extendPrototype(Array, function first ( count = 1) {
-	return this.slice(0, count);
+	return singleItemOrArray(this.slice(0, count));
 });
 
 extendPrototype(Array, function last (count = 1) {
-	return this[this.length - count];
+	return singleItemOrArray(this.slice(-count));
 });
 
 extendPrototype(Array, function clone () {
@@ -60,8 +66,7 @@ extendPrototype(Array, function clear () {
 });
 
 extendPrototype(Array, function grab (start, end = start + 1) {
-	const grabbed = this.splice(start, end - start);
-	return (grabbed.length === 1) ? grabbed[0] : grabbed;
+	return singleItemOrArray(this.splice(start, end - start));
 });
 
 extendPrototype(Array, function deduplicate () {
@@ -109,8 +114,13 @@ extendPrototype(Array, function merge (...others) {
 	return this;
 });
 
+extendPrototype(Array, function reversed () {
+	return this
+		.clone()
+		.reverse();
+});
+
 import alias from "./Alias.js";
-alias(Array, "deduplicate", "dedup",   false);
 alias(Array, "deduplicate", "unique",  false);
 alias(Array, "average",     "avg",     false);
 alias(Array, "reject",      "without", false);

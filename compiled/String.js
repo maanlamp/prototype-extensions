@@ -14,7 +14,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-//Actual methods
 (0, _Extend2.default)(String, function capitalise() {
 	return this[0].toUpperCase() + this.slice(1);
 });
@@ -24,8 +23,9 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 });
 
 (0, _Extend2.default)(String, function camelcasify() {
-	var temp = this.replace(/[-_]/g, " ").words();
-	return temp[0].decapitalise() + temp.slice(1).map(function (element) {
+	var words = this.replace(/[-_]/g, " ").words();
+
+	return words[0].decapitalise() + words.slice(1).map(function (element) {
 		return element.capitalise();
 	}).join("");
 });
@@ -127,9 +127,9 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 	return count !== 1 ? this + "s" : this;
 });
 
-(0, _Extend2.default)(String, function startsWith(pattern) {
-	return this.first(pattern.length) === pattern;
-});
+// extendPrototype(String, function startsWith (pattern) {
+// 	return this.first(pattern.length) === pattern;
+// });
 
 (0, _Extend2.default)(String, function dedent() {
 	var indentation = this.substring(this.indexOf("\n") + 1).substring(0, this.search(/\S/) - 1);

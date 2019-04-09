@@ -1,6 +1,5 @@
 import extendPrototype from "./Extend.js";
 
-//Actual methods
 extendPrototype(String, function capitalise () {
 	return this[0].toUpperCase() + this.slice(1);
 });
@@ -10,8 +9,16 @@ extendPrototype(String, function decapitalise () {
 });
 
 extendPrototype(String, function camelcasify () {
-	const temp = this.replace(/[-_]/g, " ").words();
-	return temp[0].decapitalise() + temp.slice(1).map((element) => element.capitalise()).join("");
+	const words = this
+		.replace(/[-_]/g, " ")
+		.words();
+
+	return words[0]
+		.decapitalise()
+		+ words
+			.slice(1)
+			.map((element) => element.capitalise())
+			.join("");
 });
 
 extendPrototype(String, function first (length = 1) {
@@ -25,7 +32,9 @@ extendPrototype(String, function last (length = 1) {
 extendPrototype(String, function pad (length = 1, padString = " ") {
 	switch (typeof length) {
 		case "number":
-			return this.padStart(length, padString).padEnd(length, padString.reverse());
+			return this
+				.padStart(length, padString)
+				.padEnd(length, padString.reverse());
 		case "string":
 			padString = length;
 			return padString + this + padString.reverse();
@@ -57,7 +66,9 @@ extendPrototype(String, function pad (length = 1, padString = " ") {
 // });
 
 extendPrototype(String, function reverse () {
-	return [...this].reverse().join("");
+	return [...this]
+		.reverse()
+		.join("");
 });
 
 extendPrototype(String, function letters () {
@@ -73,7 +84,9 @@ extendPrototype(String, function escape () {
 });
 
 extendPrototype(String, function characters (ignoreWhitespace = true) {
-	return (ignoreWhitespace) ? this.match(/\S/g) : [...this];
+	return (ignoreWhitespace)
+		? this.match(/\S/g)
+		: [...this];
 });
 
 extendPrototype(String, function truncate (length, symbol = "...") {
@@ -81,24 +94,32 @@ extendPrototype(String, function truncate (length, symbol = "...") {
 });
 
 extendPrototype(String, function words (includeSpecialCharacters = true) {
-	return (includeSpecialCharacters) ? this.match(/\b[-'\w]+\b/g) : this.match(/\b\w+\b/g);
+	return (includeSpecialCharacters)
+	? this.match(/\b[-'\w]+\b/g)
+	: this.match(/\b\w+\b/g);
 });
 
 extendPrototype(String, function wordCount () {
-	return this.words().length;
+	return this
+		.words()
+		.length;
 });
 
 extendPrototype(String, function hyphenate () {
-	return this.words(false).join("-");
+	return this
+		.words(false)
+		.join("-");
 });
 
 extendPrototype(String, function inflect (count) { //Declension? Get grammatical number? idk what the best naming is.
-	return (count !== 1) ? `${this}s` : this;
+	return (count !== 1)
+		? `${this}s`
+		: this;
 });
 
-extendPrototype(String, function startsWith (pattern) {
-	return this.first(pattern.length) === pattern;
-});
+// extendPrototype(String, function startsWith (pattern) {
+// 	return this.first(pattern.length) === pattern;
+// });
 
 extendPrototype(String, function dedent () {
 	const indentation = this
