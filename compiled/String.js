@@ -1,148 +1,138 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _Extend = require("./Extend.js");
-
-var _Extend2 = _interopRequireDefault(_Extend);
-
-var _Alias = require("./Alias.js");
-
-var _Alias2 = _interopRequireDefault(_Alias);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+exports.capitalise = capitalise;
+exports.decapitalise = decapitalise;
+exports.camelcasify = camelcasify;
+exports.first = first;
+exports.last = last;
+exports.pad = pad;
+exports.reverse = reverse;
+exports.letters = letters;
+exports.punctuationMarks = punctuationMarks;
+exports.escape = escape;
+exports.characters = characters;
+exports.truncate = truncate;
+exports.words = words;
+exports.wordCount = wordCount;
+exports.hyphenate = hyphenate;
+exports.inflect = inflect;
+exports.dedent = dedent;
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-(0, _Extend2.default)(String, function capitalise() {
-	return this[0].toUpperCase() + this.slice(1);
-});
+function capitalise() {
+	return this[0].toUpperCase() + this.substring(1);
+}
 
-(0, _Extend2.default)(String, function decapitalise() {
-	return this[0].toLowerCase() + this.slice(1);
-});
+function decapitalise() {
+	return this[0].toLowerCase() + this.substring(1);
+}
 
-(0, _Extend2.default)(String, function camelcasify() {
+function camelcasify() {
 	var words = this.replace(/[-_]/g, " ").words();
 
 	return words[0].decapitalise() + words.slice(1).map(function (element) {
 		return element.capitalise();
 	}).join("");
-});
+}
 
-(0, _Extend2.default)(String, function first() {
+function first() {
 	var length = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
 
-	return this.slice(0, length);
-});
+	return this.substring(0, length);
+}
 
-(0, _Extend2.default)(String, function last() {
+function last() {
 	var length = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
 
-	return this.slice(-length);
-});
+	return this.substring(0, this.length - length);
+}
 
-(0, _Extend2.default)(String, function pad() {
+function pad() {
 	var length = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
 	var padString = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : " ";
 
 	switch (typeof length === "undefined" ? "undefined" : _typeof(length)) {
 		case "number":
-			return this.padStart(length, padString).padEnd(length, padString.reverse());
+			{
+				return this.padStart(length, padString).padEnd(length, padString.reverse());
+			}
 		case "string":
-			padString = length;
-			return padString + this + padString.reverse();
+			{
+				padString = length;
+				return padString + this + padString.reverse();
+			}
 		default:
 			throw new Error("Cannot pad with " + length);
 	}
-});
+}
 
-// DEPRECATED
-// extendPrototype(String, function padLeft (length = 1, padString = " ") {
-// 	switch (typeof length) {
-// 		case "number":
-// 			return padString.repeat(length) + this;
-// 		case "string":
-// 			padString = length;
-// 			return padString + this;
-// 		default: throw new Error(`Cannot pad with ${length}`);
-// 	}
-// });
-
-// extendPrototype(String, function padRight (length = 1, padString = " ") {
-// 	switch (typeof length) {
-// 		case "number":
-// 			return this + padString.repeat(length);
-// 		case "string":
-// 			padString = length;
-// 			return this + padString;
-// 		default: throw new Error(`Cannot pad with ${length}`);
-// 	}
-// });
-
-(0, _Extend2.default)(String, function reverse() {
+function reverse() {
 	return [].concat(_toConsumableArray(this)).reverse().join("");
-});
+}
 
-(0, _Extend2.default)(String, function letters() {
+function letters() {
 	return this.match(/\w/g);
-});
+}
 
-(0, _Extend2.default)(String, function punctuationMarks() {
+function punctuationMarks() {
 	return this.match(/[-[\]{}()*+?.,^$|#!'"]/g);
-});
+}
 
-(0, _Extend2.default)(String, function escape() {
+function escape() {
 	return this.replace(/\W/g, "\\$&");
-});
+}
 
-(0, _Extend2.default)(String, function characters() {
+function characters() {
 	var ignoreWhitespace = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
 	return ignoreWhitespace ? this.match(/\S/g) : [].concat(_toConsumableArray(this));
-});
+}
 
-(0, _Extend2.default)(String, function truncate(length) {
+function truncate(length) {
 	var symbol = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "...";
 
-	return "" + this.slice(0, length) + symbol;
-});
+	return "" + this.substring(0, length) + symbol;
+}
 
-(0, _Extend2.default)(String, function words() {
+function words() {
 	var includeSpecialCharacters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
 	return includeSpecialCharacters ? this.match(/\b[-'\w]+\b/g) : this.match(/\b\w+\b/g);
-});
+}
 
-(0, _Extend2.default)(String, function wordCount() {
+function wordCount() {
 	return this.words().length;
-});
+}
 
-(0, _Extend2.default)(String, function hyphenate() {
+function hyphenate() {
 	return this.words(false).join("-");
-});
+}
 
-(0, _Extend2.default)(String, function inflect(count) {
+function inflect(count) {
 	//Declension? Get grammatical number? idk what the best naming is.
 	return count !== 1 ? this + "s" : this;
-});
+}
 
-// extendPrototype(String, function startsWith (pattern) {
-// 	return this.first(pattern.length) === pattern;
-// });
-
-(0, _Extend2.default)(String, function dedent() {
+function dedent() {
 	var indentation = this.substring(this.indexOf("\n") + 1).substring(0, this.search(/\S/) - 1);
 
 	return this.replace(new RegExp("^" + indentation, "gm"), "").replace(/[\r\t\f\v ]*|<-/g, "");
-});
+}
 
-(0, _Alias2.default)(String, "capitalise", "capitalize", false);
-(0, _Alias2.default)(String, "decapitalise", "decapitalize", false);
-(0, _Alias2.default)(String, "camelcasify", "camelCasify", false);
-(0, _Alias2.default)(String, "toLowerCase", "toLower", false);
-(0, _Alias2.default)(String, "toLowerCase", "lower", false);
-(0, _Alias2.default)(String, "toUpperCase", "toUpper", false);
-(0, _Alias2.default)(String, "toUpperCase", "upper", false);
+//Aliases
+var capitalize = exports.capitalize = capitalise; //.bind(String.prototype);
+var decapitalize = exports.decapitalize = decapitalise; //.bind(String.prototype);
+var camelCasify = exports.camelCasify = camelcasify; //.bind(String.prototype);
+var toUpper = exports.toUpper = String.prototype.toUpperCase; //.bind(String.prototype);
+var upper = exports.upper = String.prototype.toUpperCase; //.bind(String.prototype);
+var toLower = exports.toLower = String.prototype.toLowerCase; //.bind(String.prototype);
+var lower = exports.lower = String.prototype.toLowerCase; //.bind(String.prototype);
 
 //titlecasify -> Title Case is Geweldig!

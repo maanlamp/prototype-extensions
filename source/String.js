@@ -1,14 +1,12 @@
-import extendPrototype from "./Extend.js";
+export function capitalise () {
+	return this[0].toUpperCase() + this.substring(1);
+}
 
-extendPrototype(String, function capitalise () {
-	return this[0].toUpperCase() + this.slice(1);
-});
+export function decapitalise () {
+	return this[0].toLowerCase() + this.substring(1);
+}
 
-extendPrototype(String, function decapitalise () {
-	return this[0].toLowerCase() + this.slice(1);
-});
-
-extendPrototype(String, function camelcasify () {
+export function camelcasify () {
 	const words = this
 		.replace(/[-_]/g, " ")
 		.words();
@@ -19,109 +17,84 @@ extendPrototype(String, function camelcasify () {
 			.slice(1)
 			.map((element) => element.capitalise())
 			.join("");
-});
+}
 
-extendPrototype(String, function first (length = 1) {
-	return this.slice(0, length);
-});
+export function first (length = 1) {
+	return this.substring(0, length);
+}
 
-extendPrototype(String, function last (length = 1) {
-	return this.slice(-length);
-});
+export function last (length = 1) {
+	return this.substring(0, this.length - length);
+}
 
-extendPrototype(String, function pad (length = 1, padString = " ") {
+export function pad (length = 1, padString = " ") {
 	switch (typeof length) {
-		case "number":
+		case "number": {			
 			return this
 				.padStart(length, padString)
 				.padEnd(length, padString.reverse());
-		case "string":
+		}
+		case "string": {
 			padString = length;
 			return padString + this + padString.reverse();
+		}
 		default: throw new Error(`Cannot pad with ${length}`);
 	}
-});
+}
 
-// DEPRECATED
-// extendPrototype(String, function padLeft (length = 1, padString = " ") {
-// 	switch (typeof length) {
-// 		case "number":
-// 			return padString.repeat(length) + this;
-// 		case "string":
-// 			padString = length;
-// 			return padString + this;
-// 		default: throw new Error(`Cannot pad with ${length}`);
-// 	}
-// });
-
-// extendPrototype(String, function padRight (length = 1, padString = " ") {
-// 	switch (typeof length) {
-// 		case "number":
-// 			return this + padString.repeat(length);
-// 		case "string":
-// 			padString = length;
-// 			return this + padString;
-// 		default: throw new Error(`Cannot pad with ${length}`);
-// 	}
-// });
-
-extendPrototype(String, function reverse () {
+export function reverse () {
 	return [...this]
 		.reverse()
 		.join("");
-});
+}
 
-extendPrototype(String, function letters () {
+export function letters () {
 	return this.match(/\w/g);
-});
+}
 
-extendPrototype(String, function punctuationMarks () {
+export function punctuationMarks () {
 	return this.match(/[-[\]{}()*+?.,^$|#!'"]/g);
-});
+}
 
-extendPrototype(String, function escape () {
+export function escape () {
 	return this.replace(/\W/g, "\\$&");
-});
+}
 
-extendPrototype(String, function characters (ignoreWhitespace = true) {
+export function characters (ignoreWhitespace = true) {
 	return (ignoreWhitespace)
 		? this.match(/\S/g)
 		: [...this];
-});
+}
 
-extendPrototype(String, function truncate (length, symbol = "...") {
-	return `${this.slice(0, length)}${symbol}`;
-});
+export function truncate (length, symbol = "...") {
+	return `${this.substring(0, length)}${symbol}`;
+}
 
-extendPrototype(String, function words (includeSpecialCharacters = true) {
+export function words (includeSpecialCharacters = true) {
 	return (includeSpecialCharacters)
 	? this.match(/\b[-'\w]+\b/g)
 	: this.match(/\b\w+\b/g);
-});
+}
 
-extendPrototype(String, function wordCount () {
+export function wordCount () {
 	return this
 		.words()
 		.length;
-});
+}
 
-extendPrototype(String, function hyphenate () {
+export function hyphenate () {
 	return this
 		.words(false)
 		.join("-");
-});
+}
 
-extendPrototype(String, function inflect (count) { //Declension? Get grammatical number? idk what the best naming is.
+export function inflect (count) { //Declension? Get grammatical number? idk what the best naming is.
 	return (count !== 1)
 		? `${this}s`
 		: this;
-});
+}
 
-// extendPrototype(String, function startsWith (pattern) {
-// 	return this.first(pattern.length) === pattern;
-// });
-
-extendPrototype(String, function dedent () {
+export function dedent () {
 	const indentation = this
 		.substring(this.indexOf("\n") + 1)
 		.substring(0, this.search(/\S/) - 1);
@@ -129,15 +102,15 @@ extendPrototype(String, function dedent () {
 	return this
 		.replace(new RegExp(`^${indentation}`, "gm"), "")
 		.replace(/[\r\t\f\v ]*|<-/g, "");
-});
+}
 
-import alias from "./Alias.js";
-alias(String, "capitalise",   "capitalize",   false);
-alias(String, "decapitalise", "decapitalize", false);
-alias(String, "camelcasify",  "camelCasify",  false);
-alias(String, "toLowerCase",  "toLower",      false);
-alias(String, "toLowerCase",  "lower",        false);
-alias(String, "toUpperCase",  "toUpper",      false);
-alias(String, "toUpperCase",  "upper",        false);
+//Aliases
+export const capitalize   = capitalise;//.bind(String.prototype);
+export const decapitalize = decapitalise;//.bind(String.prototype);
+export const camelCasify  = camelcasify;//.bind(String.prototype);
+export const toUpper      = String.prototype.toUpperCase;//.bind(String.prototype);
+export const upper        = String.prototype.toUpperCase;//.bind(String.prototype);
+export const toLower      = String.prototype.toLowerCase;//.bind(String.prototype);
+export const lower        = String.prototype.toLowerCase;//.bind(String.prototype);
 
 //titlecasify -> Title Case is Geweldig!

@@ -1,35 +1,48 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _Extend = require("./Extend.js");
-
-var _Extend2 = _interopRequireDefault(_Extend);
-
-var _Alias = require("./Alias.js");
-
-var _Alias2 = _interopRequireDefault(_Alias);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+exports.average = average;
+exports.pluck = pluck;
+exports.reject = reject;
+exports.max = max;
+exports.min = min;
+exports.first = first;
+exports.last = last;
+exports.clone = clone;
+exports.remove = remove;
+exports.clear = clear;
+exports.grab = grab;
+exports.deduplicate = deduplicate;
+exports.mapAsync = mapAsync;
+exports.filterAsync = filterAsync;
+exports.chunkify = chunkify;
+exports.split = split;
+exports.merge = merge;
+exports.reversed = reversed;
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function toNumber(value) {
 	var num = Number(value);
-	return !isNaN(num) && num || 0;
+	return Number.isNaN(num) ? 0 : num;
 }
 
 function singleItemOrArray(array) {
 	return array.length === 1 ? array[0] : array;
 }
 
-(0, _Extend2.default)(Array, function average() {
+function average() {
 	return this.reduce(function (total, current) {
 		return total += toNumber(current);
 	}) / this.length;
-});
+}
 
-(0, _Extend2.default)(Array, function pluck(value) {
+function pluck(value) {
 	var returnValue = [];
 	this.forEach(function (element) {
 		//maybe switch statement? idk
@@ -42,70 +55,70 @@ function singleItemOrArray(array) {
 		}
 	});
 	return returnValue;
-});
+}
 
-(0, _Extend2.default)(Array, function reject(value) {
+function reject(value) {
 	var pluckedValues = this.pluck(value);
 	return this.filter(function (element) {
 		return !pluckedValues.includes(element);
 	});
-});
+}
 
-(0, _Extend2.default)(Array, function max() {
+function max() {
 	return this.reduce(function (max, current) {
 		return Math.max(max, toNumber(current));
 	}, toNumber(this[0]));
-});
+}
 
-(0, _Extend2.default)(Array, function min() {
+function min() {
 	return this.reduce(function (min, current) {
 		return Math.min(min, toNumber(current));
 	}, toNumber(this[0]));
-});
+}
 
-(0, _Extend2.default)(Array, function first() {
+function first() {
 	var count = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
 
 	return singleItemOrArray(this.slice(0, count));
-});
+}
 
-(0, _Extend2.default)(Array, function last() {
+function last() {
 	var count = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
 
 	return singleItemOrArray(this.slice(-count));
-});
+}
 
-(0, _Extend2.default)(Array, function clone() {
+function clone() {
 	return this.slice();
-});
+}
 
-(0, _Extend2.default)(Array, function remove(from) {
+function remove(from) {
 	var to = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : from + 1;
 
 	this.splice(from, to);
 	return this;
-});
+}
 
-(0, _Extend2.default)(Array, function clear() {
+function clear() {
 	this.length = 0;
 	return this;
-});
+}
 
-(0, _Extend2.default)(Array, function grab(start) {
+function grab(start) {
 	var end = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : start + 1;
 
 	return singleItemOrArray(this.splice(start, end - start));
-});
+}
 
-(0, _Extend2.default)(Array, function deduplicate() {
+function deduplicate() {
 	return [].concat(_toConsumableArray(new Set(this)));
-});
+}
 
-(0, _Extend2.default)(Array, function mapAsync(callback) {
+function mapAsync(callback) {
 	return Promise.all(this.map(callback));
-});
+}
 
-(0, _Extend2.default)(Array, function filterAsync(predicate) {
+function filterAsync(predicate) {
 	var toFilter = Symbol();
 	return this.mapAsync(async function (item) {
 		return (await predicate(item)) && item || toFilter;
@@ -114,9 +127,9 @@ function singleItemOrArray(array) {
 			return item !== toFilter;
 		});
 	});
-});
+}
 
-(0, _Extend2.default)(Array, function chunkify() {
+function chunkify() {
 	var chunkSize = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
 
 	var returnArray = [];
@@ -124,9 +137,9 @@ function singleItemOrArray(array) {
 		returnArray.push(this.slice(i, i + chunkSize));
 	}
 	return returnArray;
-});
+}
 
-(0, _Extend2.default)(Array, function split(separator) {
+function split(separator) {
 	var limit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.length;
 
 	//Implement limit somehow?
@@ -166,23 +179,24 @@ function singleItemOrArray(array) {
 	}
 
 	return chunks;
-});
+}
 
-(0, _Extend2.default)(Array, function merge() {
+function merge() {
 	for (var _len = arguments.length, others = Array(_len), _key = 0; _key < _len; _key++) {
 		others[_key] = arguments[_key];
 	}
 
 	this.push.apply(this, _toConsumableArray(others.flat()));
 	return this;
-});
+}
 
-(0, _Extend2.default)(Array, function reversed() {
+function reversed() {
 	return this.clone().reverse();
-});
+}
 
-(0, _Alias2.default)(Array, "deduplicate", "unique", false);
-(0, _Alias2.default)(Array, "average", "avg", false);
-(0, _Alias2.default)(Array, "reject", "without", false);
-(0, _Alias2.default)(Array, "clone", "copy", false);
-(0, _Alias2.default)(Array, "deduplicate", "dedup", false);
+//Aliases
+var unique = exports.unique = deduplicate;
+var avg = exports.avg = average;
+var without = exports.without = reject;
+var copy = exports.copy = clone;
+var dedup = exports.dedup = deduplicate;
