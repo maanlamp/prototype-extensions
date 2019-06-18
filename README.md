@@ -471,3 +471,25 @@ a.reversed();
 a
 // > [1, 2, 3]
 ```
+---
+<a name="array_sortBy" href="#array_sortBy">#️⃣</a> <code>_Array_.**sortBy** ( <span class="type">any:</span> ..._others_ )</code> [</>](./source/Array.js#L123-L126)
+
+Works somewhat like `Array.sort`, but doesn't require a callback. Instead, you can provide a string representation of the property of every element in the array you want to sort by (or an accessor function). Sorts biggest to smallest.
+
+```js
+const sizes = [
+  {width: 10, height: 16},
+  {width: 99, height: 1712},
+  {width: 135, height: 355}];
+
+sizes.sortBy("width");
+sizes.sortBy(item => item.width);
+// > [{width: 135, height: 355},
+//    {width: 99, height: 1712},
+//    {width: 10, height: 16}]
+sizes.sortBy("height");
+sizes.sortBy(item => item.height);
+// > [{width: 99, height: 1712},
+//    {width: 135, height: 355},
+//    {width: 10, height: 16}]
+```

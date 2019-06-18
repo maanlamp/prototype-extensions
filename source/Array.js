@@ -110,7 +110,7 @@ export function split (separator, limit = this.length) {
 }
 
 export function merge (...others) {
-	this.push(...(others.flat()));
+	this.push(...others.flat());
 	return this;
 }
 
@@ -118,6 +118,11 @@ export function reversed () {
 	return this
 		.clone()
 		.reverse();
+}
+
+export function sortBy (property) {
+	if (property instanceof Function) return this.sort((a, b) => -(property(a) - property(b)));
+	return this.sort((a, b) => -(a[property] - b[property]));
 }
 
 //Aliases

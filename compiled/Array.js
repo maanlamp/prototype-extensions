@@ -24,6 +24,7 @@ exports.chunkify = chunkify;
 exports.split = split;
 exports.merge = merge;
 exports.reversed = reversed;
+exports.sortBy = sortBy;
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
@@ -192,6 +193,15 @@ function merge() {
 
 function reversed() {
 	return this.clone().reverse();
+}
+
+function sortBy(property) {
+	if (property instanceof Function) return this.sort(function (a, b) {
+		return -(property(a) - property(b));
+	});
+	return this.sort(function (a, b) {
+		return -(a[property] - b[property]);
+	});
 }
 
 //Aliases
